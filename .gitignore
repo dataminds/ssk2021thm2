@@ -4,6 +4,9 @@
 
 # Session Data files
 .RData
+.rds
+.xlsx
+.xls
 
 # User-specific files
 .Ruserdata
@@ -19,6 +22,8 @@
 
 # RStudio files
 .Rproj.user/
+*.Rproj
+
 
 # produced vignettes
 vignettes/*.html
