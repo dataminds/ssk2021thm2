@@ -7,6 +7,7 @@
 .rds
 .xlsx
 .xls
+data/
 
 # User-specific files
 .Ruserdata
