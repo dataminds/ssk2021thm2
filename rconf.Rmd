@@ -1,0 +1,829 @@
+---
+title: "SSK 1차 심포지움: 팬데믹 시기 소통과 삶의 조건"
+subtitle: "대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향"
+author: "안도현(제주대학교)"
+institute: "서울대언론정보학과SSK연구단"
+date: "2022-1-19"
+output:
+  xaringan::moon_reader:
+    css: 
+      - [default]
+      - css/rconf.css
+      - css/rconf-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/rconf-logo.html]
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+library(tidyverse)
+
+options(
+  htmltools.dir.version = FALSE, 
+  htmltools.preserve.raw = FALSE,
+  tibble.width = 60, tibble.print_min = 6,
+  crayon.enabled = TRUE
+)
+
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center',
+                      fig.width = 7.252,
+                      fig.height = 4,
+                      dpi = 300)
+
+# uncomment the following lines if you want to use the NHS-R theme colours by default
+# scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
+# scale_fill_discrete <- partial(scale_fill_nhs, discrete = TRUE)
+# scale_colour_continuous <- partial(scale_colour_nhs, discrete = FALSE)
+# scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
+```
+
+
+class: title-slide, left, bottom
+
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+class: inverse, middle
+name: data-science-case
+
+# .warmyellow[발표 개요]
+
+----
+
+.pull-left[
+
+.burlywood[연구문제]
+
+**.tomato[I. 대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향: 고립감과 소속연결감의 매개효과]**
+
+1. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
+
+2. 대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?  
+
+3. 사회관계성의 두 측면(고립감 & 소속연결감)은 대면소통과 비대면소통의 정신건강에 대한 영향은 차별적으로 매개할 것인가?
+
+]
+
+.pull-right[   
+.left[
+
+**.CornflowerBlue[순 서]** 
+
+1. [개념 & 가설](#concepts1)
+  1. [미디어이용과 대면소통: 증강 vs. 전치](#concepts1)  
+  2. [정신건강: 안녕감과 불안녕감](#hypo1)   
+  3. [사회관계: 고립감과 소속연결감](#method1)  
+
+2. [방 법](#method1)  
+
+3. [결 과](#results1)  
+
+4. [논 의](#discussion1)  
+
+]
+] <!--end of right-column-->
+
+
+<!--------------------------  슬라이드 본문 시작 ------------------------------------->
+
+---
+name: concepts1
+# 1. 대면소통과 미디어이용
+
+**.tomato[I. 미디어이용과 대면소통: 증강 vs. 전치]**
+
+1. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
+
+
+
+---
+name: hypo1
+# 가설 & 연구질문
+
+**.tomato[미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가?]  **
+
+- **증강가설(augmenttaion hypothesis):  **
+  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용 시간이 많을수록 대면소통시간은 증가할 것이다. 
+  
+- **전치가설(displacement hypothesis):  **
+  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용 시간이 많을수록 대면소통시간은 감소할 것이다. 
+  
+.footnote[
+ 
+]
+
+
+---
+name: concepts2
+# 2. 정신건강
+
+**.tomato[II. 대면소통과 미디어이용의 정신건강의 두 측면(불안녕감 & 안녕감)에 대한 차별적 영향]**
+
+
+---
+name: hypo2
+# 가설2
+
+**.tomato[대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?]** 
+
+- **증강가설(augmenttaion hypothesis):  **
+  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
+  
+
+- **전치가설(displacement hypothesis):  **
+  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+
+
+
+
+---
+name: concepts3
+# 3. 사회관계
+
+**.tomato[III. 사회관계 두 측면(고립감 & 소속연결감)의 차별적 매개효과]**
+
+
+
+---
+name: hypo3
+# 연구질문
+**.tomato[사회관계성의 두 측면(고립감 & 소속연결감)은 대면소통과 비대면소통의 정신건강에 대한 영향은 차별적으로 매개할 것인가?]**  
+
+- **증강가설(augmenttaion hypothesis):  **
+  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 고립감 감소와 소속연결감 증가를 통해  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
+  
+
+- **전치가설(displacement hypothesis):  **
+  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 고립감 증대와 소속연결감 감소를 통해 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+
+
+
+```{r message=TRUE, warning=TRUE, include=FALSE}
+if(!require(remote)) install.packages("remote")
+if(!require(gtExtras)) remotes::install_github("jthomasmock/gtExtras")
+#if(!require(processR)) remotes::install_github("cardiomoon/processR")
+
+c("summarytools", "psych", "lm.beta", "lavaan", "mediation",
+  "writexl", "readxl", "gt", "kableExtra", "gtExtras",  
+  "janitor", "here", "corrr", "Hmisc", "correlation",
+  "see", "ggraph",
+  "tidyverse", "tidytext", "lubridate") -> pkg_v
+pkg_v %in% installed.packages()[,"Package"] -> pkg_installed
+( pkg_v[!pkg_installed] -> pkg_new )
+
+if(length(pkg_new)) install.packages(pkg_new)
+
+lapply(pkg_v, require, ch = T)
+
+readRDS("data/v5889.rds") -> v5889_df; v5889_df -> df
+df %>% group_by(성) %>% summarise(N = n(), P = N/nrow(df)*100) -> sex_df
+df %>% group_by(학력) %>% summarise(N = n(), P = N/nrow(df)*100) -> edu_df
+
+df %>% summarise(M = mean(나이), SD = sd(나이)) -> age_df
+df %>% summarise(M = mean(소득), SD = sd(소득)) -> income_df
+
+
+options(digits = 1)
+```
+
+---
+name: method1
+# 참가자
+
+- 설문전문업체에 등록된 패널에 설문참가 안내 이메일을 보내 자료를 수집했다. 업체의 설문풀에 등록된 사람 중 8,196명이 설문안내 이메일을 통해 접속했다. 이중 5,967명이 응답을 완료했다. 불성실 응답자를 제외한 5889명(남성 = `r sex_df$N[1]`; 나이 *M* = `r age_df$M`, *SD* = `r age_df$SD`)을 최종 분석 대상에 포함했다.
+
+- 응답자의 교육수준은 `r edu_df$N[11]+edu_df$N[12]`명(`r edu_df$P[11]+edu_df$P[12]`%)이 석사 또는 박사학위 취득, `r edu_df$N[8]+edu_df$N[9]+edu_df$N[10]`명(`r edu_df$P[8]+edu_df$P[9]+edu_df$P[10]`%)이 대학 재학/중퇴/졸업, `r edu_df$N[5]+edu_df$N[6]+edu_df$N[7]`명(`r edu_df$P[5]+edu_df$P[6]+edu_df$P[7]`%)이 전문대학 재학/중퇴/졸업, `r edu_df$N[4]`명(`r edu_df$P[4]`%)이 고등학교 졸업, `r edu_df$N[1]+edu_df$N[2]+edu_df$N[3]`명(`r edu_df$P[1]+edu_df$P[2]+edu_df$P[3]`%)이 무학/초등학교졸업/중학교졸업이다. 
+
+- 연간 가구소득은 월평균으로 100만원씩 증가하는 12점 척도(1 = 100만원 미만,  12 = 1,100만원 이상)로 측정했다(*M* = `r income_df$M`, *SD* = `r income_df$SD`). 
+
+
+- 설문참여자들은 설문사이트에 접속해 설문에 대한 간단한 소개, 개인정보 보호 및 위험과 권리 등에 대해 안내를 받은 후, 인구통계 정보를 기입한 다음, 다른 연구주제의 설문 문항에 답한 후, 이 연구의 설문 문항에 응답했다. 
+
+- 자료수집에 대해서는 기관생명윤리위원회의 심의를 받았다. 
+
+---
+name: method2iv1
+# 측정1a: 대면소통
+
+4개 유형(같이 살고 있는 사람, 비동가 가족 혹은 친척, 업무/학업 목적의 지인/친구/동료, 사적인 목적의 지인/친구/동료)의 사람들과의 접촉 빈도("지난 한 달 평균 귀하는 다음의 사람들과 얼마나 자주 직접 만나서 대화를 하셨습니까?")를 통해 측정했다(1 = 전혀 안했다, 9 = 한 시간에 여러번). 
+
+
+---
+name: method2iv2
+# 측정1b: 미디어이용
+
+관계이용, 정보이용, 오락이용 등의 미디어이용에 대해 Rosen et al. (2013)과 권호열 등(2020)을 참조하고 한국인의 최근 미디어 이용 양식을 반영해 각 유형별 5~6 종의 미디어 이용 시간을 한달 기준으로 9점척도(1 = 전혀 교류(or 이용)하지 않았다, 9 = 한 시간에 여러 번)로 측정했다. 
+
+  - 관계이용("귀하는 지난 한 달간 각 매체를 통해 다른 사람들과 얼마나 자주 교류하셨습니까?")은 음성통화, 문자메신저(휴대폰문자, 카카오톡, 네이트온, 라인 등), 화상통화(페이스타임, 카카오톡 영상통화), SNS(페이스북, 인스타그램, 트위터, 카카오스토리 등), 이메일, 온라인 커뮤니티 및 게시판 등 6종의 미디어 이용에 대해 각각 질문해 평균을 계산했다. 
+  
+  - 정보이용("귀하는 지난 한 달 간 아래 각 매체를 통해 얼마나 자주 뉴스/정보를 이용하셨습니까?")은  TV뉴스, 라디오, 종이신문, 인터넷 포털/언론사 홈페이지, SNS(페이스북, 인스타그램, 트위터, 카카오스토리 등), 동영상 스트리밍 사이트(유튜브, 트위치, 아프리카TV 등) 등 6종의 미디어 이용에 각각 질문해 평균을 계산했다. 
+  
+  - 오락이용("귀하는 지난 한 달간 무료함을 달래거나 오락을 위해 아래 각 컨텐츠를 얼마나 자주 이용하셨습니까?")은 영화/드라마, 웹툰, 컴퓨터/온라인게임, 스포츠중계, 음악/뮤직비디오 등 5종의 미디어 이용에 각각 질문해 평균을 계산했다.  
+
+.footnote[
+ 
+Rosen, L. D., Whaling, K., Carrier, L. M., Cheever, N. A., & Rokkum, J. (2013). The media and technology usage and attitudes scale: An empirical investigation. _Computers in Human Behavior, 29_(6), 2501-2511.
+
+권호열 등 (2020). <2020한국미디어패널조사>. 정보통신정책연구원 https://stat.kisdi.re.kr/kor/contents/ContentsList.html
+
+]
+
+---
+name: method3
+# 측정2: 정신건강  
+
+정신건강은 불안녕감과 안녕감 두 측면으로 구분해 측정했다. 
+
+- 불안녕감
+
+  정신건강진단도구로 널리 사용되는 Goldberg & Hiller(1979)의 일반건강설문지(General Health Questionnaire) 12문항 축약형을 박종익 등(2012)이 한국어로 개발한 한국판 일반건강 설문지에서 문항 4개 추출해 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다. 대규모 설문수집이라 12문항을 모두 이용하지 않고 우울불안 요인적재치가 높은 4문항("근심 때문에 잠을 잘 자지 못한다,"  "닥친 문제를 극복할 수 없다고 느낀다,"  "불행하거나 우울하다고 느낀다,"  "항상 긴장하고 있다고 느낀다")을 선별했다 (alpha = 0.86) . 
+
+- 안녕감
+
+  삶의 만족에 대해 단일 문항("나는 내 삶에 만족한다.")을 이용해 7점 척도로 측정했다 (1 = 전혀 그렇지 않다, 7 = 매우 그렇다). 단일 측정 문항이나 측정 신뢰성이 확인돼 있다 (Lucas & Brent, 2012).
+  
+
+.footnote[
+
+박종익, 김영주, & 조맹제. (2012). 한국판 일반 건강 설문지의 요인 구조. <신경정신의학>, 51, 178-184.  
+Goldberg, D.P., Hillier, V.F. (1979) A scaled version of the General Health Questionnaire. _Psychological Medicine 9_, 139-145.  
+Lucas, R. E., & Brent Donnellan, M. (2012). Estimating the reliability of single-item life satisfaction measures: Results from four national panel studies. _Social Indicators Research, 105_(3), 323-331. https://doi.org/10.1007/s11205-011-9783-z  
+
+]
+
+
+---
+name: method4
+# 측정3: 사회관계
+
+사회관계는 고립감과 소속연결감 두 측면으로 구분해 측정했다. 
+
+- 고립감
+
+  정신건강진단도구로 널리 사용되는 Goldberg & Hiller(1979)의 일반건강설문지(General Health Questionnaire) 12문항 축약형을 박종익 등(2012)이 한국어로 개발한 한국판 일반건강 설문지에서 문항 4개 추출해 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다. 대규모 설문수집이라 12문항을 모두 이용하지 않고 우울불안 요인적재치가 높은 4문항("근심 때문에 잠을 잘 자지 못한다,"  "닥친 문제를 극복할 수 없다고 느낀다,"  "불행하거나 우울하다고 느낀다,"  "항상 긴장하고 있다고 느낀다")을 선별했다 (alpha = 0.86) . 
+
+- 안녕감
+
+  삶의 만족에 대해 단일 문항("나는 내 삶에 만족한다.")을 이용해 7점 척도로 측정했다 (1 = 전혀 그렇지 않다, 7 = 매우 그렇다). 단일 측정 문항이나 측정 신뢰성이 확인돼 있다 (Lucas & Brent, 2012).
+  
+
+.footnote[
+
+박종익, 김영주, & 조맹제. (2012). 한국판 일반 건강 설문지의 요인 구조. <신경정신의학>, 51, 178-184.  
+Goldberg, D.P., Hillier, V.F. (1979) A scaled version of the General Health Questionnaire. _Psychological Medicine 9_, 139-145.  
+Lucas, R. E., & Brent Donnellan, M. (2012). Estimating the reliability of single-item life satisfaction measures: Results from four national panel studies. _Social Indicators Research, 105_(3), 323-331. https://doi.org/10.1007/s11205-011-9783-z  
+
+]
+
+
+
+```{r}
+apa_style <- function(data) {
+  data %>%
+    opt_table_lines(extent = "none") %>%
+    tab_options(
+      heading.border.bottom.width = 2,
+      heading.border.bottom.color = "black",
+      heading.border.bottom.style = "solid",
+      table.border.top.color = "white",
+      table_body.hlines.color = "white",
+      table_body.border.top.color = "black",
+      table_body.border.top.style = "solid",
+      table_body.border.top.width = 1,
+      heading.title.font.size = 12,
+      table.font.size = 12,
+      heading.subtitle.font.size = 12,
+      table_body.border.bottom.color = "black",
+      table_body.border.bottom.width = 1,
+      table_body.border.bottom.style = "solid",
+      column_labels.border.bottom.color = "black",
+      column_labels.border.bottom.style = "solid",
+      column_labels.border.bottom.width = 1
+    ) %>%
+      opt_table_font(font = "times")
+}
+```
+
+---
+name: results1
+# 결과: 기술통계
+
+- 상관관계, 평균, 및 표준편차
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+apply_if <- function(mat, p, f) {
+  # Fill NA with FALSE
+  p[is.na(p)] <- FALSE
+  mat[p] <- f(mat[p])
+  mat
+}
+apaCorr <- function(mat, corrtype = "pearson") {
+  matCorr <- mat
+  if (class(matCorr) != "rcorr") {
+    matCorr <- rcorr(mat, type = corrtype)
+  }
+
+  # Add one star for each p < 0.05, 0.01, 0.001
+  stars <- apply_if(round(matCorr$r, 2), matCorr$P < 0.05, function(x) paste0(x, "*"))
+  stars <- apply_if(stars, matCorr$P < 0.01, function(x) paste0(x, "*"))
+  stars <- apply_if(stars, matCorr$P < 0.001, function(x) paste0(x, "*"))
+  # Put - on diagonal and blank on upper diagonal
+  stars[upper.tri(stars, diag = T)] <- "-"
+  stars[upper.tri(stars, diag = F)] <- ""
+  n <- length(stars[1,])
+  colnames(stars) <- 1:n
+  # Remove _ and convert to title case
+  row.names(stars) <- tools::toTitleCase(sapply(row.names(stars), gsub, pattern="_", replacement = " "))
+  # Add index number to row names
+  row.names(stars) <- paste(paste0(1:n,"."), row.names(stars))
+  stars
+}
+
+options(digits = 3)
+v5889_df %>% dplyr::select(대면빈도, 비대면빈도, 대면인원, 비대면인원, 우울불안, 삶만족) -> df
+
+df %>% map_dfc(mean) %>% fashion(decimals = 2) %>% as_tibble() %>% 
+  pivot_longer(everything(), names_to = "Mname", values_to = "M") -> mean_df
+df %>% map_dfc(sd) %>% fashion(decimals = 2) %>% as_tibble() %>% 
+  pivot_longer(everything(), names_to = "SDname", values_to = "SD") -> sd_df
+df %>% correlate() %>% shave(upper = T) %>% 
+  fashion(decimals = 2, na_print = "-") %>% as_tibble() -> cor_df
+df %>% as.matrix() %>% apaCorr(corrtype = "pearson") %>% 
+  as.data.frame() -> cor_df
+tibble(Variable = c(
+  "1. F2F Frequency ",
+  "2. CMC Frequency",
+  "3. F2F Network Size",
+  "4. CMC Network Size",
+  "5. Ill-being",
+  "6. Well-being"
+)) -> row_df
+
+bind_cols(row_df, mean_df[2], sd_df[2], cor_df) %>% 
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 1.** Descriptive Statistics and Correlations for Study Variables(*N* = 5889)")
+  ) %>% cols_label(
+    M = md("*M*"), SD = md("*SD*")
+  ) %>% cols_width(
+    Variable ~ px(180)
+  ) %>% tab_source_note(
+    source_note = md("_Note._ * _p_ < .05,  ** _p_ < .01,  *** _p_ < .001  
+                     F2F = Face-to-Face, CMC = Computer Mediated Communication")
+  ) 
+
+```
+
+
+
+---
+name: results2
+# 결과: 가설1: 비대면소통빈도 -> 대면소통빈도
+
+비대면소통은 사회관계의 대체재로서 대면소통을 증강하는가, 전치하는가?
+
+비대면소통빈도와 대면소통빈도의 관계
+
+```{r}
+options(digits = 3)
+X <- c("비대면빈도", "비대면인원")
+Y <- c("대면빈도", "대면인원")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+# model p-value
+lmp_f <- function (modelobject) {
+    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
+    f <- summary(modelobject)$fstatistic
+    p <- pf(f[1],f[2],f[3],lower.tail=F)
+    attributes(p) <- NULL
+    return(p)
+}
+
+paste0(Y[1],"~",W,"+",X[1]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "CMC Frequency")) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on F2F Frequency with CMC frequency (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(5, 5883) = 540.74, _p_ < .001, R<sup>2</sup> = 0.31, _&Delta;R<sup>2</sup>_ = 0.31 
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+                         
+```{r message=FALSE, warning=FALSE, include=FALSE}
+glue::glue(
+  "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
+)
+```
+
+
+---
+name: results3
+# 결과: 가설1: 비대면소통인원수 -> 대면소통인원수
+
+비대면소통인원수와 대면소통인원수의 관계
+
+```{r}
+options(digits = 3)
+X <- c("비대면빈도", "비대면인원")
+Y <- c("대면빈도", "대면인원")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(Y[2],"~",W,"+",X[2]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "CMC Network Size")) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on F2F Network Size with CMC Network Size (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(5, 5883) = 937.13, p < .001, R<sup>2</sup> = 0.44, _&Delta;R<sup>2</sup>_ = 0.44
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+.footnote[
+
+]
+
+
+---
+name: results4
+# 결과: 가설2a: 대면-비대면소통빈도 -> 불안녕감
+
+대면소통과 비대면소통은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 어떤 영향을 미치는가?
+
+비대면 및 대면소통빈도가 정신건강의 불안녕감에 미치는 영향
+
+```{r}
+options(digits = 3)
+X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+# model p-value
+lmp_f <- function (modelobject) {
+    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
+    f <- summary(modelobject)$fstatistic
+    p <- pf(f[1],f[2],f[3],lower.tail=F)
+    attributes(p) <- NULL
+    return(p)
+}
+
+paste0(Y[1],"~",W,"+",X[1],"*",X[2]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Frequency",
+  "CMC Frequency",
+  "F2F:CMC"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on Ill-being with F2F Frequency and CMC frequency (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(7, 5881) = 29.93, p < .001, R<sup>2</sup> = 0.03, _&Delta;R<sup>2</sup>_ = 0.03  
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+                         
+```{r message=FALSE, warning=FALSE, include=FALSE}
+glue::glue(
+  "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
+)
+```
+
+
+---
+name: results5
+# 결과: 가설2a: 대면-비대면소통빈도 -> 안녕감
+
+비대면 및 대면소통 인원수가 정신건강 안녕감에 미치는 영향
+
+```{r}
+options(digits = 3)
+X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(Y[2],"~",W,"+",X[1],"*",X[2]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Frequency",
+  "CMC Frequency",
+  "F2F:CMC"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on Well-being with F2F Frequency and CMC Frequency (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(7, 5881) = 89.39, p < .001, R<sup>2</sup> = 0.1, _&Delta;R<sup>2</sup>_ = 0.1 
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+.footnote[
+
+]
+
+
+
+---
+name: results6
+# 결과: 가설2b 대면-비대면소통 인원수 -> 불안녕감
+
+대면소통과 비대면소통은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 어떤 영향을 미치는가?
+
+비대면 및 대면소통빈도가 정신건강의 불안녕감에 미치는 영향
+
+```{r}
+options(digits = 3)
+X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+# model p-value
+lmp_f <- function (modelobject) {
+    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
+    f <- summary(modelobject)$fstatistic
+    p <- pf(f[1],f[2],f[3],lower.tail=F)
+    attributes(p) <- NULL
+    return(p)
+}
+
+paste0(Y[1],"~",W,"+",X[3],"*",X[4]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Network Size",
+  "CMC Network Size",
+  "F2F:CMC"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on Ill-being with F2F Network Size and CMC Network Size (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(7, 5881) = 37.29, p < .001, R<sup>2</sup> = 0.04, _&Delta;R<sup>2</sup>_ = 0.04
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+                         
+```{r message=FALSE, warning=FALSE, include=FALSE}
+glue::glue(
+  "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
+)
+```
+
+
+---
+name: results7
+# 결과: 가설2b: 대면-비대면소통 인원수 -> 안녕감
+
+비대면 및 대면소통 인원수가 정신건강 안녕감에 미치는 영향
+
+```{r}
+options(digits = 3)
+X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(Y[2],"~",W,"+",X[3],"*",X[4]) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male, 1 = Female)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Network Size",
+  "CMC Network Size",
+  "F2F:CMC"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_538() %>% 
+  tab_header(md("**Table 2.** Multiple Regression Analysis on Well-being with F2F Network Size and CMC Network Size (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(7, 5881) = 79.01, p < .001, R<sup>2</sup> = 0.09, _&Delta;R<sup>2</sup>_ = 0.08
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+.footnote[
+
+]
+
+
+---
+name: discussion1
+# 논의
+
+
+
+---
+name: last
+
+class: middle, inverse
+
+.pull-left[
+# **경청해 주셔서 <br>감사합니다.**
+<br/>
+
+]
+
+.pull-right[
+.right[
+
+
+]
+]
