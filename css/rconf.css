@@ -185,3 +185,39 @@ blockquote {
 .beige      { color:   #F5F5DC }
 
 /*-- https://www.w3schools.com/colors/colors_names.asp --*/
+
+
+/* Two-column layout */
+.left-column4 {
+  width: 40%;
+  height: 92%;
+  float: left;
+}
+.left-column h2, .left-column h3 {
+  color: #1381B099;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #1381B0;
+}
+.right-column6 {
+  width: 55%;
+  float: right;
+  padding-top: 1em;
+}
+
+.left-column3 {
+  width: 30%;
+  height: 92%;
+  float: left;
+}
+.left-column h2, .left-column h3 {
+  color: #1381B099;
+}
+.left-column h2:last-of-type, .left-column h3:last-child {
+  color: #1381B0;
+}
+.right-column7 {
+  width: 65%;
+  float: right;
+  padding-top: 1em;
+}

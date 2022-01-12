@@ -1,0 +1,377 @@
+---
+name: hypo2
+# 가설 & 연구질문2
+
+**.tomato[대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?]** 
+
+- **증강가설(augmenttaion hypothesis):**  
+
+  H2a: 미디어이용이 대면소통을 증강하므로 미디어이용 증가는 정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
+  
+
+- **전치가설(displacement hypothesis):**  
+
+  H2b: 미디어이용이 대면소통을 전치하므로 미디어이용 증가는 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+
+
+RQ2: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 정신건강의  대면소통시간의 관련성은 차별적으로 나타날 것인가? 
+
+
+
+
+---
+name: results2a
+# 결과: 가설2: 대면소통 & 미디어이용 -> 정신건강(불안녕감)
+
+관계이용과 정보이용 및 오락이용의 대면소통과의 상관성에 차이가 있어, 미디어이용보다는 관계이용, 정보이용, 오락이용만 분석. 
+
+대면빈도와 관계이용의 증가는 불안녕감의 유의한 감소로 이어졌다. 정보이용과 오락이용의 증가는 불안녕감의 유의한 증가로 이어졌다. 
+
+모든 변수의 VIF 1.7미만이므로 다중공선성 가능성 배제 가능하다. 
+
+```{r}
+options(digits = 3)
+#names(v5889_df)
+X <- c("관계이용", "정보이용", "오락이용")
+I <- c("대면빈도")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(
+  Y[1], "~", W, "+", 
+  I,"+", 
+  X[1], "+",
+  X[2], "+", 
+  X[3]
+  ) %>% lm(formula = ., data = df) -> fit
+
+#fit %>% car::vif()
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+#fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Frequency",
+  "Media Use: Relation",
+  "Media Use: Information",
+  "Media Use: Entertainment"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 4.** Multiple Regression Analysis on Ill-being with Media Uses (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(8, 5880) = 36.7, p < .001, R<sup>2</sup> = 0.05, _&Delta;R<sup>2</sup>_ = 0.05
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+.footnote[
+
+]
+
+---
+name: results2b
+# 결과: 가설2: 대면소통 & 미디어이용 -> 정신건강(안녕감)
+
+관계이용과 정보이용 및 오락이용의 대면소통과의 상관성에 차이가 있어, 미디어이용보다는 관계이용, 정보이용, 오락이용만 분석. 
+
+정보이용과 오락이용은 대면빈도와 관계이용을 함께 투입하면 안녕감 예측 유의도 사라진다. 
+정보이용과 오락이용은 안녕감과 상관성이 유의하기 때문에, 대면소통과 관계이용이 매개할 가능성이 있다. 
+
+```{r}
+options(digits = 3)
+#names(v5889_df)
+X <- c("관계이용", "정보이용", "오락이용")
+I <- c("대면빈도")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+readRDS("data/v5889.rds") -> df
+
+paste0(
+  Y[2], "~", W, "+", I,"+", X[1], "+" ,X[2], "+", X[3]
+  ) %>% lm(formula = ., data = df) -> fit
+
+#fit %>% car::vif()
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+#fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Frequency",
+  "Media Use: Relation",
+  "Media Use: Information",
+  "Media Use: Entertainment"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 5.** Multiple Regression Analysis on Well-being with Media Uses (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(8, 5880) = 89.42, p < .001, R<sup>2</sup> = 0.11, _&Delta;R<sup>2</sup>_ = 0.11
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+.footnote[
+
+]
+
+
+---
+name: results2b1
+# 결과: 정보이용/오락이용 ~  정신건강(안녕감)
+
+정보이용과 오락이용은 안녕감과 상관성이 유의하기 때문에, 대면소통과 관계이용이 매개할 가능성이 있다. 
+
+
+```{r}
+df %>% dplyr::select(대면빈도, 관계이용, 정보이용, 오락이용, 
+                     #관계_고립, 관계_소속연결,
+                     우울불안, 삶만족) %>% 
+  pairs.panels()
+```
+
+
+
+
+---
+name: results2c
+# 결과: 정보이용-대면소통/관계이용-안녕감
+
+
+정보이용의 안녕감의 관계에 대해 대면소통과 관계이용의 매개가능성을 확인했다. 관계이용은 매개하지만, 대면소통은 매개하지 않았다. 
+
+```{r}
+
+X <- c("정보이용", "오락이용")[1]
+M <- c("대면빈도", "관계이용")
+Y <- "삶만족"
+W <- "성+나이+소득+학력"
+
+out_l <- list()
+par(mfrow = c(1,2))
+for(i in seq_along(M)) {
+  M_fmla <- paste0(M[[i]], "~", X, "+", W)
+  Y_fmla <- paste0(Y, "~", X, "+", M[[i]], "+", W)
+  
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X, mediator = M[[i]], boot = T, sims = 100)
+  plot(med_out, main = paste(X, "-", M[[i]], "-", Y, sep = " "))
+  out_l[[i]] <- summary(med_out)
+}
+#
+
+```
+
+
+관계이용과 정보이용 사이의 상호작용은 유의하지 않다. 
+
+```{r eval=FALSE, include=FALSE}
+options(digits = 3)
+#names(v5889_df)
+X <- c("관계이용", "정보이용", "오락이용")
+I <- c("대면빈도")
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(
+  Y[2], "~", W, "+", X[1], "*", X[2]#, "+", X[3]
+  ) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+#fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male)",
+  "Age",
+  "Income",
+  "Education",
+#  "F2F Frequency",
+  "Media Use: Relation",
+  "Media Use: Information",
+  "Relations*Information"
+#  "Media Use: Entertainment"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 4.** Multiple Regression Analysis on Well-being with Media Uses (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(8, 5880) = 89.42, p < .001, R<sup>2</sup> = 0.11, _&Delta;R<sup>2</sup>_ = 0.11
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+
+---
+name: results2d
+# 결과: 오락이용-대면소통/관계이용-안녕감
+
+오락이용의 안녕감의 관계에 대해 대면소통과 관계이용의 매개가능성을 확인했다. 관계이용은 매개하지만, 대면소통은 매개하지 않았다. 
+
+```{r}
+X <- c("정보이용", "오락이용")[2]
+M <- c("대면빈도", "관계이용")
+Y <- "삶만족"
+W <- "성+나이+소득+학력"
+
+par(mfrow = c(1,2))
+out_l <- list()
+for(i in seq_along(M)) {
+  M_fmla <- paste0(M[[i]], "~", X, "+", W)
+  Y_fmla <- paste0(Y, "~", X, "+", M[[i]], "+", W)
+  
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X, mediator = M[[i]], boot = T, sims = 100)
+  plot(med_out, main = paste(X, "-", M[[i]], "-", Y, sep = " "))
+  out_l[[i]] <- summary(med_out)
+}
+
+```
+
+
+관계이용과 오락이용의 상호작용은 유의하다. 
+
+```{r eval=FALSE, include=FALSE}
+options(digits = 3)
+#names(v5889_df)
+X <- c("관계이용", "정보이용", "오락이용")
+I <- c("대면빈도")
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+paste0(
+  Y[2], "~", W, "+", X[1], "*", X[3]#, "+", X[3]
+  ) %>% lm(formula = ., data = df) -> fit
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+#fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male)",
+  "Age",
+  "Income",
+  "Education",
+#  "F2F Frequency",
+  "Media Use: Relation",
+  "Media Use: Entertainmnet",
+  "Relations*Entertainment"
+#  "Media Use: Entertainment"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 4.** Multiple Regression Analysis on Well-being with Media Uses (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(8, 5880) = 89.42, p < .001, R<sup>2</sup> = 0.11, _&Delta;R<sup>2</sup>_ = 0.11
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+
+
+

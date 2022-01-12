@@ -1,8 +1,8 @@
 ---
-title: "SSK 1차 심포지움: 팬데믹 시기 소통과 삶의 조건"
+title: "SSK심포지움I: 팬데믹 시기 삶의 양식과 마음건강"
 subtitle: "대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향"
 author: "안도현(제주대학교)"
-institute: "서울대언론정보학과SSK연구단"
+institute: "서울대 팬데믹과 포스트팬데믹 시기 디지털소통양식과 정신건강 SSK사업단"
 date: "2022-1-19"
 output:
   xaringan::moon_reader:
@@ -18,6 +18,11 @@ output:
       highlightLanguage: ["r"]
       countIncrementalSlides: false
       ratio: "16:9"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
     includes:
       after_body: [css/rconf-logo.html]
 editor_options: 
@@ -112,15 +117,23 @@ name: concepts1
 
 ---
 name: hypo1
-# 가설 & 연구질문
+# 가설 & 연구질문1
 
 **.tomato[미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가?]  **
 
-- **증강가설(augmenttaion hypothesis):  **
-  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용 시간이 많을수록 대면소통시간은 증가할 것이다. 
+- **증강가설(augmenttaion hypothesis):**  
+
+  H1a: 미디어이용이 대면소통을 증강하므로 미디어이용 시간이 많을수록 대면소통시간은 증가할 것이다. 
   
-- **전치가설(displacement hypothesis):  **
-  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용 시간이 많을수록 대면소통시간은 감소할 것이다. 
+- **전치가설(displacement hypothesis):**  
+
+  H1b- 미디어이용이 대면소통을 전치하므로 미디어이용 시간이 많을수록 대면소통시간은 감소할 것이다. 
+  
+  
+RQ1a: 미디어의 유형별(핸드폰, 스마트기기, 컴퓨터, TV, 종이)이용 시간은 대면소통시간의 관련성은 차별적으로 나타날 것인가? 
+
+RQ1b: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 대면소통시간의 관련성은 차별적으로 나타날 것인가? 
+
   
 .footnote[
  
@@ -133,19 +146,7 @@ name: concepts2
 
 **.tomato[II. 대면소통과 미디어이용의 정신건강의 두 측면(불안녕감 & 안녕감)에 대한 차별적 영향]**
 
-
----
-name: hypo2
-# 가설2
-
-**.tomato[대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?]** 
-
-- **증강가설(augmenttaion hypothesis):  **
-  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
-  
-
-- **전치가설(displacement hypothesis):  **
-  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+2. 대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?  
 
 
 
@@ -160,15 +161,21 @@ name: concepts3
 
 ---
 name: hypo3
-# 연구질문
-**.tomato[사회관계성의 두 측면(고립감 & 소속연결감)은 대면소통과 비대면소통의 정신건강에 대한 영향은 차별적으로 매개할 것인가?]**  
+# 가설 & 연구질문3
 
-- **증강가설(augmenttaion hypothesis):  **
-  - 미디어이용이 대면소통을 증강하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 고립감 감소와 소속연결감 증가를 통해  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
-  
+**.tomato[사회관계성의 두 측면(고립감 & 소속연결감)은 대면소통과 미디어이용의 정신건강에 대한 영향은 차별적으로 매개할 것인가?]**  
 
-- **전치가설(displacement hypothesis):  **
-  - 미디어이용이 대면소통을 전치하므로 미디어의 유형별(관계이용, 정보이용, 오락이용)이용시간 증가는 고립감 증대와 소속연결감 감소를 통해 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+- **증강가설(augmenttaion hypothesis):**  
+
+  H3a: 미디어이용이 대면소통을 증강하므로 미디어이용 증가는 고립감 감소와 소속연결감 증가를 통해  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
+
+
+- **전치가설(displacement hypothesis):**  
+
+  H3b: 미디어이용이 대면소통을 전치하므로 미디어이용 증가는 고립감 증대와 소속연결감 감소를 통해 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+
+
+RQ3: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 고립감과 소속연결감을 통해 정신건강의 두 측면(불안녕감과 안녕감)에 차별적으로 영향을 미칠 것인가? 
 
 
 
@@ -226,7 +233,22 @@ name: method2iv1
 name: method2iv2
 # 측정1b: 미디어이용
 
-관계이용, 정보이용, 오락이용 등의 미디어이용에 대해 Rosen et al. (2013)과 권호열 등(2020)을 참조하고 한국인의 최근 미디어 이용 양식을 반영해 각 유형별 5~6 종의 미디어 이용 시간을 한달 기준으로 9점척도(1 = 전혀 교류(or 이용)하지 않았다, 9 = 한 시간에 여러 번)로 측정했다. 
+미디어이용에 대해 Rosen et al. (2013)과 권호열 등(2020)을 참조하여 유형 별로 5종(핸드폰 (스마트폰 제외), 스마트 기기(스마트폰, 스마트TV, 태블릿 등), 컴퓨터(노트북 혹은 데스크탑PC), TV, 및 종이(책 또는 신문))으로 구분해 질문 문항을 제시했다. 미디어 이용 시간은 한달 기준으로 9점척도(1 = 전혀 교류(or 이용)하지 않았다, 9 = 한 시간에 여러 번)로 측정했다. 
+
+  
+.footnote[
+ 
+Rosen, L. D., Whaling, K., Carrier, L. M., Cheever, N. A., & Rokkum, J. (2013). The media and technology usage and attitudes scale: An empirical investigation. _Computers in Human Behavior, 29_(6), 2501-2511.
+
+권호열 등 (2020). <2020한국미디어패널조사>. 정보통신정책연구원 https://stat.kisdi.re.kr/kor/contents/ContentsList.html
+
+]
+
+---
+name: method2iv3
+# 측정1c: 미디어이용양식
+
+미디어이용양식은 관계이용, 정보이용, 오락이용 등 3개 양식으로 구분해 Rosen et al. (2013)과 권호열 등(2020)을 참조하고 한국인의 최근 미디어 이용 양식을 반영해 각 유형별 5~6 종의 미디어 이용 시간을 한달 기준으로 9점척도(1 = 전혀 교류(or 이용)하지 않았다, 9 = 한 시간에 여러 번)로 측정했다. 
 
   - 관계이용("귀하는 지난 한 달간 각 매체를 통해 다른 사람들과 얼마나 자주 교류하셨습니까?")은 음성통화, 문자메신저(휴대폰문자, 카카오톡, 네이트온, 라인 등), 화상통화(페이스타임, 카카오톡 영상통화), SNS(페이스북, 인스타그램, 트위터, 카카오스토리 등), 이메일, 온라인 커뮤니티 및 게시판 등 6종의 미디어 이용에 대해 각각 질문해 평균을 계산했다. 
   
@@ -250,11 +272,11 @@ name: method3
 
 - 불안녕감
 
-  정신건강진단도구로 널리 사용되는 Goldberg & Hiller(1979)의 일반건강설문지(General Health Questionnaire) 12문항 축약형을 박종익 등(2012)이 한국어로 개발한 한국판 일반건강 설문지에서 문항 4개 추출해 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다. 대규모 설문수집이라 12문항을 모두 이용하지 않고 우울불안 요인적재치가 높은 4문항("근심 때문에 잠을 잘 자지 못한다,"  "닥친 문제를 극복할 수 없다고 느낀다,"  "불행하거나 우울하다고 느낀다,"  "항상 긴장하고 있다고 느낀다")을 선별했다 (alpha = 0.86) . 
+  정신건강진단도구로 널리 사용되는 Goldberg & Hiller(1979)의 일반건강설문지(General Health Questionnaire) 12문항 축약형을 박종익 등(2012)이 한국어로 개발한 한국판 일반건강 설문지에서 문항 4개 추출해 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다. 대규모 설문수집이라 12문항을 모두 이용하지 않고 우울불안과 같은 불안녕감에 대한 문항으로서 요인적재치가 높은 4문항("근심 때문에 잠을 잘 자지 못한다,"  "닥친 문제를 극복할 수 없다고 느낀다,"  "불행하거나 우울하다고 느낀다,"  "항상 긴장하고 있다고 느낀다")을 선별했다 (&alpha; = 0.86) . 
 
 - 안녕감
 
-  삶의 만족에 대해 단일 문항("나는 내 삶에 만족한다.")을 이용해 7점 척도로 측정했다 (1 = 전혀 그렇지 않다, 7 = 매우 그렇다). 단일 측정 문항이나 측정 신뢰성이 확인돼 있다 (Lucas & Brent, 2012).
+  삶의 만족에 대해 단일 문항("나는 내 삶에 만족한다")을 이용해 7점 척도로 측정했다 (1 = 전혀 그렇지 않다, 7 = 매우 그렇다). 단일 문항의 측정 신뢰성이 확인돼 있다 (Lucas & Brent, 2012).
   
 
 .footnote[
@@ -270,22 +292,19 @@ Lucas, R. E., & Brent Donnellan, M. (2012). Estimating the reliability of single
 name: method4
 # 측정3: 사회관계
 
-사회관계는 고립감과 소속연결감 두 측면으로 구분해 측정했다. 
+사회관계는 개정판 UCLA 외로움 척도(Russell et al., 1980)에서 3요인(고립, 소속, 연결)을 구분한 (Hawkley et al., 2005)를 토대로 고립감과 소속연결감에 해당하는 문항을 이용해 측정했다. 대규모 설문수집이라 20문항을 모두 이용하지 않고, 고립, 소속, 연결 등 각 요인의 적재치를 기준으로 고립감 2개 문항("나는 사람들과 교류가 부족하다," "나는 다른 사람들로부터 소외감을 느낀다")을 선별했고(*r* = .63), 소속연결 4개 문항("나는 내 주위 사람들과 마음이 통한다,"
+"나는 내 주위 사람들과 많은 공통점을 가지고 있다," "나와 함께 얘기를 나눌 수 있는 사람들이 있다," "나는 의지할 사람들이 있다")을 선별했다(&alpha; = .89). Kim (1997)의 한국어판 문항을 커뮤니케이션학 연구자 7인이 공동으로 각 문항의 한국어 표현을 가다듬었다. 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다.
 
-- 고립감
 
-  정신건강진단도구로 널리 사용되는 Goldberg & Hiller(1979)의 일반건강설문지(General Health Questionnaire) 12문항 축약형을 박종익 등(2012)이 한국어로 개발한 한국판 일반건강 설문지에서 문항 4개 추출해 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다. 대규모 설문수집이라 12문항을 모두 이용하지 않고 우울불안 요인적재치가 높은 4문항("근심 때문에 잠을 잘 자지 못한다,"  "닥친 문제를 극복할 수 없다고 느낀다,"  "불행하거나 우울하다고 느낀다,"  "항상 긴장하고 있다고 느낀다")을 선별했다 (alpha = 0.86) . 
-
-- 안녕감
-
-  삶의 만족에 대해 단일 문항("나는 내 삶에 만족한다.")을 이용해 7점 척도로 측정했다 (1 = 전혀 그렇지 않다, 7 = 매우 그렇다). 단일 측정 문항이나 측정 신뢰성이 확인돼 있다 (Lucas & Brent, 2012).
-  
 
 .footnote[
 
-박종익, 김영주, & 조맹제. (2012). 한국판 일반 건강 설문지의 요인 구조. <신경정신의학>, 51, 178-184.  
-Goldberg, D.P., Hillier, V.F. (1979) A scaled version of the General Health Questionnaire. _Psychological Medicine 9_, 139-145.  
-Lucas, R. E., & Brent Donnellan, M. (2012). Estimating the reliability of single-item life satisfaction measures: Results from four national panel studies. _Social Indicators Research, 105_(3), 323-331. https://doi.org/10.1007/s11205-011-9783-z  
+Hawkley, L. C., Browne, M. W., & Cacioppo, J. T. (2005). How can I connect with thee? Let me count the ways. _Psychological Science, 16_(10), 798-804.
+
+Kim, O. S. (1997). Korean version of the revised UCLA Loneliness Scale: Reliability
+and validity test. _Journal of Korean Academy of Nursing, 27_, 871–879.
+
+Russell, D., Peplau, L. A., & Cutrona, C. E. (1980). The revised UCLA Loneliness Scale: concurrent and discriminant validity evidence. _Journal of Personality and Social Psychology, 39_(3), 472.
 
 ]
 
@@ -319,7 +338,7 @@ apa_style <- function(data) {
 ```
 
 ---
-name: results1
+name: results
 # 결과: 기술통계
 
 - 상관관계, 평균, 및 표준편차
@@ -331,6 +350,85 @@ apply_if <- function(mat, p, f) {
   mat[p] <- f(mat[p])
   mat
 }
+apaCorr <- function(mat, corrtype = "spearman") {
+  matCorr <- mat
+  if (class(matCorr) != "rcorr") {
+    matCorr <- rcorr(mat, type = corrtype)
+  }
+
+  # Add one star for each p < 0.05, 0.01, 0.001
+  stars <- apply_if(round(matCorr$r, 2), matCorr$P < 0.05, function(x) paste0(x, "*"))
+  stars <- apply_if(stars, matCorr$P < 0.01, function(x) paste0(x, "*"))
+  stars <- apply_if(stars, matCorr$P < 0.001, function(x) paste0(x, "*"))
+  # Put - on diagonal and blank on upper diagonal
+  stars[upper.tri(stars, diag = T)] <- "-"
+  stars[upper.tri(stars, diag = F)] <- ""
+  n <- length(stars[1,])
+  colnames(stars) <- 1:n
+  # Remove _ and convert to title case
+  row.names(stars) <- tools::toTitleCase(sapply(row.names(stars), gsub, pattern="_", replacement = " "))
+  # Add index number to row names
+  row.names(stars) <- paste(paste0(1:n,"."), row.names(stars))
+  stars
+}
+
+options(digits = 3)
+v5889_df %>% dplyr::select(대면빈도, 미디어시간, 관계이용, 정보이용, 오락이용, 관계_고립, 관계_소속연결, 우울불안, 삶만족) -> df
+
+df %>% map_dfc(mean) %>% fashion(decimals = 2) %>% as_tibble() %>% 
+  pivot_longer(everything(), names_to = "Mname", values_to = "M") -> mean_df
+df %>% map_dfc(sd) %>% fashion(decimals = 2) %>% as_tibble() %>% 
+  pivot_longer(everything(), names_to = "SDname", values_to = "SD") -> sd_df
+df %>% corrr::correlate() %>% shave(upper = T) %>% 
+  fashion(decimals = 2, na_print = "-") %>% as_tibble() -> cor_df
+df %>% as.matrix() %>% apaCorr(corrtype = "pearson") %>% 
+  as.data.frame() -> cor_df
+tibble(Variable = c(
+  "1. F2F Frequency ",
+  "2. Media Use",
+  "3. Media Use: Relation",
+  "4. Media Use: Information",
+  "5. Media Use: Entertainment",
+  "6. Isolation",
+  "7. Connectedness",
+  "8. Ill-being",
+  "9. Well-being"
+)) -> row_df
+
+bind_cols(row_df, mean_df[2], sd_df[2], cor_df) %>% 
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 1.** Descriptive Statistics and Correlations(Pearson) for Study Variables(*N* = 5889)")
+  ) %>% cols_label(
+    M = md("*M*"), SD = md("*SD*")
+  ) %>% cols_width(
+    Variable ~ px(220)
+  ) %>% tab_source_note(
+    source_note = md("_Note._ * _p_ < .05,  ** _p_ < .01,  *** _p_ < .001  
+                     F2F = Face-to-Face")
+  ) 
+
+```
+
+
+
+---
+name: results1a
+# 결과: 가설1: 미디어이용과 대면소통
+.left-column3[
+
+미디어이용이 대면소통을 증강하는지 혹은 전치하는지 검정하기 위해 편상관분석을 이용해 미디어이용시간과 대면소통시간의 관계를 분석했다.  
+]
+
+.right-column7[
+
+```{r}
+apply_if <- function(mat, p, f) {
+  # Fill NA with FALSE
+  p[is.na(p)] <- FALSE
+  mat[p] <- f(mat[p])
+  mat
+}
+
 apaCorr <- function(mat, corrtype = "pearson") {
   matCorr <- mat
   if (class(matCorr) != "rcorr") {
@@ -354,167 +452,191 @@ apaCorr <- function(mat, corrtype = "pearson") {
 }
 
 options(digits = 3)
-v5889_df %>% dplyr::select(대면빈도, 비대면빈도, 대면인원, 비대면인원, 우울불안, 삶만족) -> df
+v5889_df %>% dplyr::select(
+  대면빈도, 
+  미디어시간, 관계이용, 정보이용, 오락이용, 
+  성, 나이, 학력, 소득) -> df
 
-df %>% map_dfc(mean) %>% fashion(decimals = 2) %>% as_tibble() %>% 
-  pivot_longer(everything(), names_to = "Mname", values_to = "M") -> mean_df
-df %>% map_dfc(sd) %>% fashion(decimals = 2) %>% as_tibble() %>% 
-  pivot_longer(everything(), names_to = "SDname", values_to = "SD") -> sd_df
-df %>% correlate() %>% shave(upper = T) %>% 
-  fashion(decimals = 2, na_print = "-") %>% as_tibble() -> cor_df
-df %>% as.matrix() %>% apaCorr(corrtype = "pearson") %>% 
-  as.data.frame() -> cor_df
-tibble(Variable = c(
-  "1. F2F Frequency ",
-  "2. CMC Frequency",
-  "3. F2F Network Size",
-  "4. CMC Network Size",
-  "5. Ill-being",
-  "6. Well-being"
-)) -> row_df
+# 편상관분석 represented as Gaussian graphical models
+df %>% correlation(partial = T) -> pcor_df
+pcor_df %>% plot(
+  main = "Gaussian Graphical Models for Partial Correlations",
+  asp = 1.3:1) 
 
-bind_cols(row_df, mean_df[2], sd_df[2], cor_df) %>% 
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 1.** Descriptive Statistics and Correlations for Study Variables(*N* = 5889)")
+```
+]
+
+---
+name: results1b
+# 결과: 가설1: 미디어이용과 대면소통
+
+```{r}
+# pcor_df %>% names()
+
+# 편상관분석. 대면빈도만 표 구성.
+pcor_df %>% 
+  filter(Parameter1 == "대면빈도") %>% 
+  dplyr::select(Variable1 = Parameter1,
+                Variable2 = Parameter2,
+                r = r, t = t, p = p,
+                LL = CI_low, UL = CI_high) %>% 
+  mutate(
+    Variable1 = recode(Variable1, 대면빈도 = "F2F Frequency"),
+    Variable2 = recode(Variable2, 
+                       미디어시간 = "Media Use",
+                       관계이용 = "Media Use: Relation",
+                       정보이용 = "Media Use: Information",
+                       오락이용 = "Media Use: Entertainment",
+                       성 = "Sex(0 = Male)",
+                       나이 = "Age", 
+                       학력 = "Education",
+                       소득 = "Income")
+    ) %>% 
+
+gt() %>% gt_theme_guardian() %>% 
+  tab_header(md(
+    "**Table 2.** Partial Correlations(Pearson) for F2F Frequency and Media Uses(*N* = 5889)") 
+#  ) %>% cols_label(
+#    M = md("*M*"), SD = md("*SD*")
+#  ) %>% cols_width(
+#    Variable ~ px(220)
   ) %>% cols_label(
-    M = md("*M*"), SD = md("*SD*")
-  ) %>% cols_width(
-    Variable ~ px(180)
-  ) %>% tab_source_note(
-    source_note = md("_Note._ * _p_ < .05,  ** _p_ < .01,  *** _p_ < .001  
-                     F2F = Face-to-Face, CMC = Computer Mediated Communication")
-  ) 
+    r = md("*r*"), 
+    t = md("_t_"),
+    p = md("*p*"),
+    LL = md("*LL*"),
+    UL = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("LL", "UL")
+  ) %>% fmt_number(
+    columns = c(r, t, LL, UL), decimals = 2
+  ) %>% fmt_number(
+    columns = p, decimals = 3
+  ) %>% tab_source_note(md(
+  "_Note._ * _p_ < .05,  ** _p_ < .01,  *** _p_ < .001 
+  <br>   _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  ")
+  )
 
 ```
 
 
 
 ---
-name: results2
-# 결과: 가설1: 비대면소통빈도 -> 대면소통빈도
-
-비대면소통은 사회관계의 대체재로서 대면소통을 증강하는가, 전치하는가?
-
-비대면소통빈도와 대면소통빈도의 관계
+name: results1c
+# 결과: 가설1: 미디어이용과 대면소통
 
 ```{r}
 options(digits = 3)
-X <- c("비대면빈도", "비대면인원")
-Y <- c("대면빈도", "대면인원")
-W <- c("성+나이+소득+학력")
-v5889_df -> df
+v5889_df %>% dplyr::select(
+  대면빈도, 
+  미_핸드폰, 미_스마트, 미_컴퓨터, 미_티비, 미_종이,
+  성, 나이, 학력, 소득) -> df
 
-# model p-value
-lmp_f <- function (modelobject) {
-    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
-    f <- summary(modelobject)$fstatistic
-    p <- pf(f[1],f[2],f[3],lower.tail=F)
-    attributes(p) <- NULL
-    return(p)
-}
+# 편상관분석 represented as Gaussian graphical models
+df %>% correlation(partial = T, method = "spearman") -> pcor_df
+# df %>% pairs.panels()
 
-paste0(Y[1],"~",W,"+",X[1]) %>% lm(formula = ., data = df) -> fit
-
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "CMC Frequency")) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
-  
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on F2F Frequency with CMC frequency (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(5, 5883) = 540.74, _p_ < .001, R<sup>2</sup> = 0.31, _&Delta;R<sup>2</sup>_ = 0.31 
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
 
 ```
 
+---
+name: results1d
+# 결과: 가설1: 미디어이용과 대면소통
+
+핸드폰, 스마트기기, PC, 종이이용의 분포가 비정규성이어서 서열기반 상관분석(스피어만) 수행. 
+스마트기기만 상관성 부재. 
+
+```{r}
+# pcor_df %>% names()
+
+# 편상관분석. 대면빈도만 표 구성.
+pcor_df %>% 
+  filter(Parameter1 == "대면빈도") %>% 
+  dplyr::select(Variable1 = Parameter1,
+                Variable2 = Parameter2,
+                rho = rho, S = S, p = p,
+                LL = CI_low, UL = CI_high) %>% 
+  mutate(
+    Variable1 = recode(Variable1, 대면빈도 = "F2F Frequency"),
+    Variable2 = recode(Variable2, 
+                       미_핸드폰 = "Cellphone Use",
+                       미_스마트 = "Smart Device Use",
+                       미_컴퓨터 = "PC Use",
+                       미_티비 = "TV Use",
+                       미_종이 = "Paper Use",
+                       성 = "Sex(0 = Male)",
+                       나이 = "Age", 
+                       학력 = "Education",
+                       소득 = "Income")
+    ) %>% 
+
+gt() %>% gt_theme_guardian() %>% 
+  tab_header(md(
+    "**Table 3.** Partial Correlations(Spearman) for F2F Frequency and Uses of Media(*N* = 5889)") 
+#  ) %>% cols_label(
+#    M = md("*M*"), SD = md("*SD*")
+#  ) %>% cols_width(
+#    Variable ~ px(220)
+  ) %>% cols_label(
+    rho = md("_&rho;_"), 
+    S = md("_S_"),
+    p = md("*p*"),
+    LL = md("*LL*"),
+    UL = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("LL", "UL")
+  ) %>% fmt_number(
+    columns = c(rho, LL, UL), decimals = 2
+  ) %>% fmt_number(
+    columns = c(S), decimals = 0
+  ) %>% fmt_number(
+    columns = p, decimals = 3
+  ) %>% tab_source_note(md(
+  "_Note._ * _p_ < .05,  ** _p_ < .01,  *** _p_ < .001 
+  <br>   _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit. F2F = Face to Face   ")
+  )
+
+```
+
+
                          
-```{r message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# 통계치 템플릿. 여기서 나온 결과를 복사해서 md()안에 붙여넣기
 glue::glue(
   "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
 )
 ```
 
 
----
-name: results3
-# 결과: 가설1: 비대면소통인원수 -> 대면소통인원수
 
-비대면소통인원수와 대면소통인원수의 관계
+---
+name: results2a
+# 결과: 가설2a: 대면소통/미디어이용 - 고립/소속연결감 - 불안녕감
+
+대면소통은 고립감과 소속연결감이 불안녕감을 매개. 관계이용, 정보이용, 오락이용은 매개하지 않는다. 
 
 ```{r}
-options(digits = 3)
-X <- c("비대면빈도", "비대면인원")
-Y <- c("대면빈도", "대면인원")
-W <- c("성+나이+소득+학력")
 v5889_df -> df
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
 
-paste0(Y[2],"~",W,"+",X[2]) %>% lm(formula = ., data = df) -> fit
-
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "CMC Network Size")) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
+par(mfrow = c(2,4))
+out_l <- list()
+for(j in seq_along(M)) {
+  for(i in seq_along(X)) {
+  M_fmla <- paste0(M[[j]], "~", X[[i]], "+", W)
+  Y_fmla <- paste0(Y, "~", X[[i]], "+", M[[j]], "+", W)
   
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on F2F Network Size with CMC Network Size (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(5, 5883) = 937.13, p < .001, R<sup>2</sup> = 0.44, _&Delta;R<sup>2</sup>_ = 0.44
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X[[i]], mediator = M[[j]], boot = T, sims = 100)
+  plot(med_out, main = paste(X[[i]], "-", M[[j]], "-", Y, sep = " "))
+  out_l[[i]] <- summary(med_out)
+  }
+}
 
 ```
 
@@ -524,137 +646,32 @@ bind_cols(row_df, reg_df, ci_df) %>%
 
 
 ---
-name: results4
-# 결과: 가설2a: 대면-비대면소통빈도 -> 불안녕감
+name: results2b
+# 결과: 가설2b: 대면소통/미디어이용 - 고립/소속연결감 - 안녕감
 
-대면소통과 비대면소통은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 어떤 영향을 미치는가?
-
-비대면 및 대면소통빈도가 정신건강의 불안녕감에 미치는 영향
+고립감은 모든 경우에 안녕감을 매개하지 않지만, 소속연결감은 부분매개. 
 
 ```{r}
-options(digits = 3)
-X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
-Y <- c("우울불안", "삶만족")
-W <- c("성+나이+소득+학력")
-v5889_df -> df
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
 
-# model p-value
-lmp_f <- function (modelobject) {
-    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
-    f <- summary(modelobject)$fstatistic
-    p <- pf(f[1],f[2],f[3],lower.tail=F)
-    attributes(p) <- NULL
-    return(p)
+par(mfrow = c(2,4))
+out_l <- list()
+for(j in seq_along(M)) {
+  for(i in seq_along(X)) {
+  M_fmla <- paste0(M[[j]], "~", X[[i]], "+", W)
+  Y_fmla <- paste0(Y, "~", X[[i]], "+", M[[j]], "+", W)
+  
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X[[i]], mediator = M[[j]], boot = T, sims = 100)
+  plot(med_out, main = paste(X[[i]], "-", M[[j]], "-", Y, sep = " "))
+  out_l[[i]] <- summary(med_out)
+  }
 }
-
-paste0(Y[1],"~",W,"+",X[1],"*",X[2]) %>% lm(formula = ., data = df) -> fit
-
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "F2F Frequency",
-  "CMC Frequency",
-  "F2F:CMC"
-  )) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
-  
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on Ill-being with F2F Frequency and CMC frequency (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(7, 5881) = 29.93, p < .001, R<sup>2</sup> = 0.03, _&Delta;R<sup>2</sup>_ = 0.03  
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
-
-```
-
-                         
-```{r message=FALSE, warning=FALSE, include=FALSE}
-glue::glue(
-  "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
-)
-```
-
-
----
-name: results5
-# 결과: 가설2a: 대면-비대면소통빈도 -> 안녕감
-
-비대면 및 대면소통 인원수가 정신건강 안녕감에 미치는 영향
-
-```{r}
-options(digits = 3)
-X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
-Y <- c("우울불안", "삶만족")
-W <- c("성+나이+소득+학력")
-v5889_df -> df
-
-paste0(Y[2],"~",W,"+",X[1],"*",X[2]) %>% lm(formula = ., data = df) -> fit
-
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "F2F Frequency",
-  "CMC Frequency",
-  "F2F:CMC"
-  )) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
-  
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on Well-being with F2F Frequency and CMC Frequency (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(7, 5881) = 89.39, p < .001, R<sup>2</sup> = 0.1, _&Delta;R<sup>2</sup>_ = 0.1 
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
 
 ```
 
@@ -664,144 +681,568 @@ bind_cols(row_df, reg_df, ci_df) %>%
 
 
 
----
-name: results6
-# 결과: 가설2b 대면-비대면소통 인원수 -> 불안녕감
 
-대면소통과 비대면소통은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 어떤 영향을 미치는가?
-
-비대면 및 대면소통빈도가 정신건강의 불안녕감에 미치는 영향
-
-```{r}
-options(digits = 3)
-X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
-Y <- c("우울불안", "삶만족")
-W <- c("성+나이+소득+학력")
-v5889_df -> df
-
-# model p-value
-lmp_f <- function (modelobject) {
-    if (class(modelobject) != "lm") stop("Not an object of class 'lm' ")
-    f <- summary(modelobject)$fstatistic
-    p <- pf(f[1],f[2],f[3],lower.tail=F)
-    attributes(p) <- NULL
-    return(p)
-}
-
-paste0(Y[1],"~",W,"+",X[3],"*",X[4]) %>% lm(formula = ., data = df) -> fit
-
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "F2F Network Size",
-  "CMC Network Size",
-  "F2F:CMC"
-  )) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
-  
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on Ill-being with F2F Network Size and CMC Network Size (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(7, 5881) = 37.29, p < .001, R<sup>2</sup> = 0.04, _&Delta;R<sup>2</sup>_ = 0.04
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
-
-```
-
-                         
-```{r message=FALSE, warning=FALSE, include=FALSE}
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 glue::glue(
   "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
 )
 ```
 
 
----
-name: results7
-# 결과: 가설2b: 대면-비대면소통 인원수 -> 안녕감
 
-비대면 및 대면소통 인원수가 정신건강 안녕감에 미치는 영향
+---
+name: results2e
+# 결과: 대면소통-고립감/소속연결감-불/안녕감 
+
+.left-column3[
+대면소통은 우울불안에 대해 고립감과 소속연결이 모두 매개. 반면, 삶만족에 대해서는 소속연결감만 매개하고, 고립감은 매개하지 않는다. 
+]
+
+.right-column7[
+```{r}
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")
+W <- "성+나이+소득+학력"
+
+par(mfrow = c(2,2))
+out_l <- list()
+for (i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "+", W)
+    Y_fmla <- paste0(Y[[j]], "~", X, "+", M[[i]], "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      boot = T,
+      sims = 100
+    )
+    plot(med_out, main = paste(X, "-", M[[i]], "-", Y[[j]], sep = " "))
+    out_l[[i]] <- summary(med_out)
+  }
+}
+```
+]  
+
+.footnote[
+
+]
+
+
+---
+name: results3a1
+# 결과: 가설3a1: 대면소통-고립감-불안녕감: 관계이용 조절매개
+
 
 ```{r}
-options(digits = 3)
-X <- c("대면빈도", "비대면빈도", "대면인원", "비대면인원")
-Y <- c("우울불안", "삶만족")
-W <- c("성+나이+소득+학력")
-v5889_df -> df
+v5889_df  -> df
+df %>% 
+  mutate(관계이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
 
-paste0(Y[2],"~",W,"+",X[3],"*",X[4]) %>% lm(formula = ., data = df) -> fit
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
+I <- "관계이용상하"
 
-fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
-fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
-fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
-fit %>% lmp_f() -> lmp_v
-
-fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
-fit %>% confint() %>% as.data.frame() -> ci_df
-tibble(Predictor = c(
-  "Constant",
-  "Sex(0 = Male, 1 = Female)",
-  "Age",
-  "Income",
-  "Education",
-  "F2F Network Size",
-  "CMC Network Size",
-  "F2F:CMC"
-  )) -> row_df
-
-bind_cols(row_df, reg_df, ci_df) %>% 
-  
-  gt() %>% gt_theme_538() %>% 
-  tab_header(md("**Table 2.** Multiple Regression Analysis on Well-being with F2F Network Size and CMC Network Size (*N* = 5889)")
-  ) %>% cols_label(
-    Estimate = md("*B*"), 
-    Standardized = md("_&beta;_"),
-    `Std. Error` = md("*SE*"),
-    `t value` = md("*t*"),
-    `Pr(>|t|)` = md("*p*"),
-    `2.5 %` = md("*LL*"),
-    `97.5 %` = md("*UL*")
-  ) %>% tab_spanner(
-    label = "95% CI", columns = c("2.5 %", "97.5 %")
-  ) %>% fmt_number(
-    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
-  ) %>% fmt_number(
-    columns = `Pr(>|t|)`, decimals = 3
-  ) %>% tab_source_note(md(
-  "_F_(7, 5881) = 79.01, p < .001, R<sup>2</sup> = 0.09, _&Delta;R<sup>2</sup>_ = 0.08
-  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
-  ))
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(관계이용상하  = 3),
+      covariates.2 = list(관계이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
 
 ```
 
 .footnote[
 
 ]
+
+
+---
+name: results3a2
+# 결과: 가설3a2: 대면소통-고립감-안녕감: 관계이용 조절매개
+
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(관계이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "관계이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 3),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(관계이용상하  = 3),
+      covariates.2 = list(관계이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+.footnote[
+
+]
+
+
+
+
+---
+name: results3b1
+# 결과: 가설3b1: 대면소통-고립감-불안녕감: 정보이용 조절매개
+
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(정보이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
+I <- "정보이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(정보이용상하  = 3),
+      covariates.2 = list(정보이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+.footnote[
+
+]
+
+
+---
+name: results3b2
+# 결과: 가설3b2: 대면소통-고립감-안녕감: 정보이용 조절매개
+
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(정보이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "정보이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(정보이용상하  = 3),
+      covariates.2 = list(정보이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+.footnote[
+
+]
+
+
+
+
+
+---
+name: results3c1
+# 결과: 가설3c1: 대면소통-고립감-불안녕감: 오락이용 조절매개
+
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(오락이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
+I <- "오락이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(오락이용상하  = 3),
+      covariates.2 = list(오락이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+.footnote[
+
+]
+
+
+---
+name: results3c2
+# 결과: 가설3c2: 대면소통-고립감-안녕감: 오락이용 조절매개
+
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(오락이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "오락이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M[[i]], "*", I, "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(오락이용상하  = 3),
+      covariates.2 = list(오락이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Low", sep = " "))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= Mid", sep = " "))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]], ":", I, "= High", sep = " "))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+.footnote[
+
+]
+
+
+
+
 
 
 ---
