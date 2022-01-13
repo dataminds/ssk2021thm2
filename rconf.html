@@ -42,7 +42,7 @@ name: data-science-case
 
 2. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?
 
-3. 미디어이용의 각 유형은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?  
+3. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?  
 
 
 ]
@@ -52,10 +52,10 @@ name: data-science-case
 
 **.CornflowerBlue[순 서]** 
 
-1. [개념 &amp; 가설](#concepts1)
+1. [개념 &amp; 가설]
   1. [미디어이용과 대면소통: 증강 vs. 전치](#concepts1)  
-  2. [정신건강: 안녕감과 불안녕감](#hypo1)   
-  3. [사회관계: 고립감과 소속연결감](#method1)  
+  2. [사회관계: 고립감과 소속연결감](#method1)  
+  3. [정신건강: 안녕감과 불안녕감](#hypo1)   
 
 2. [방 법](#method1)  
 
@@ -70,22 +70,220 @@ name: data-science-case
 &lt;!--------------------------  슬라이드 본문 시작 -------------------------------------&gt;
 
 ---
-name: concepts1
-# 1. 대면소통과 미디어이용
+name: intro1
+# 1. 대면소통과 미디어
 
-**.tomato[I. 미디어이용과 대면소통: 증강 vs. 전치]**
+- 소통(communication): 다양한 맥락에서 채널과 미디어를 통해 정보를 주고받는 일련의 작용을 통해 이뤄지는 의미공유 과정 (나은영, 2015)
+
+  - 관계성은 인간의 가장 근본적인 욕구(Baumeister &amp; Leary, 1995)인데, 이 욕구를 충족하는 수단이 소통. 대면소통을 통해 근본욕구를 충족함으로써, 사회적 기능(관계형성 등)을 정상적으로 수행함으로써 마음의 건강 상태 유지 가능. 
+
+- 미디어: 정보를 표현해 의미를 공유할 수 있도록 하는 수단으로 목소리나 얼굴 등 자연적으로 존재하는 현시미디어(presence media), 문자나 그림 등 문화적으로 생성된 재현미디어(represented media), 종이나 컴퓨터 등 기술적으로 개발한 기계미디어(mechanical media)로 구분 가능.
+
+  - 기계미디어(이하 미디어)를 이용한 소통도 소통이므로 대면소통처럼 인류가 사회를 구성해 생존과 번식의 문제를 해결하는데 기여. 
+
+.footnote[
+
+나은영 (2015). &lt;인간커뮤니케이션과 미디어: 소통공간의 확장&gt;. 한나래
+
+Baumeister, R. F., &amp; Leary, M. R. (1995). The need to belong: Desire for interpersonal attachments as a fundamental human motivation. _Psychological Bulletin, 117_, 497–529. http://dx.doi.org/10.1037/0033-2909.117.3.497.
+
+]
+
+
+---
+name: intro1a
+# 1a. 증강과 전치
+
+- 그러나, 미디어이용과 대면소통의 관계에 대해서는 상반된 논리가 대립중이고, 두 상반된 논리에 대해 각각 지지하는 근거도 존재하는 모순적 상황 (Valkenburg, 2021)
+
+  - 증강가설(augmentation hypothesis): 미디어이용이 대면소통 시간을 증강해 대면소통을 통한 사회관계 형성 기여하므로 정신건강에 긍정적 영향
+  
+  - 전치가설(displacement hypothesis): 미디어이용이 대면소통 시간을 전치해 대면소통을 통한 사회관계 형성 방해하므로 정신건강에 부정적 영향 
+
+- 두 가설에 대한 근거가 혼재하는 이유는 미디어이용이 대면소통을 증강하기도 하고 전치하기도 하는 이중적 역할을 하기 때문. 
+
+  - 미디어의 채널용량 한계로, 대면소통과 달리, 사회관계의 긍정적 측면만을 증강하기 때문일 가능성이 있다. 
+  
+  - 채널(Channel): 의미공유를 가능하도록 하는 물리적 수단. 전달할 수 있는 신호에 상한 용량이 있어, 의미공유 제약 요인으로 작용. 
+
+
+
+.footnote[
+
+Valkenburg, P. M. (2021). Social media use and well-being: what we know and what we need to know. _Current Opinion in Psychology, 45_. 101294 https://doi.org/10.1016/j.copsyc.2021.12.006
+
+]
+
+
+---
+name: intro1b
+# 1b. 행동의 이중 체계(dual system)
+
+- 모든 생물의 생존과 번식을 위한 행동은 크게 보상에 대한 접근(approach)과 처벌에 대한 회피(avoidance) 등 두가지 독립된 체계로 분리 (Gray, 1990). 
+
+  - 흔히 이 접근과 회피 체계는 마치 단일 선상의 서로 반대되는 것으로 간주돼 접근의 반대는 회피, 부정감정의 반대는 긍정감정 혹은 그 반대인 것으로 여기는 경우가 있지만, 실은 접근과 회피 그리고 긍정과 부정 등의 체계는 신경수준에서 상호 독립적. 
+  
+  - 두 체계의 독립성은 신경 및 심리수준의 다양한 이론을 통해 확인(e.g., Caccioppo et al., 1999)
+  
+
+.footnote[
+
+Gray, J. A. (1990). Brain systems that mediate both emotion and cognition. _Cognition &amp; Emotion, 4_(3), 269-288. https://doi.org/10.1080/02699939008410799
+
+Cacioppo, J. T., Gardner, W. L., &amp; Berntson, G. G. (1999). The affect system has parallel and integrative processing components form follows function. _Journal of Personality and Social Psychology, 76_(5), 839–855. http://dx.doi.org/10.1037/
+0022-3514.76.5.839.
+
+]
+
+
+---
+name: intro1c
+# 1c. 연구 개요
+
+- 따라서, 기존 연구에서 미디어이용의 긍정효과와 부정효과가 혼재하는 이유는 접근과 회피 혹은 긍정과 부정체계를 구분하지 않았기 때문일 가능성이 있다. 
+
+- 이를 확인하기 위해 이 연구에서는 사회관계성을 고립회피와 소속 및 연결추구로 구분하고, 정신건강은 불안녕감과 안녕감으로 구분해, 미디어이용과 대면소통의 관계성 및 정신건강의 두 측면과의 차별적 관련성 탐색. 
+
+- 이를 위해, 증강가설 대 전치가설의 틀에서 다음과 같은 연구문제를 탐색하고 한다. 
 
 1. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
 
+2. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?
 
+3. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?  
+
+
+
+---
+name: concept2a
+# 2a. 미디어이용: 관계/정보/오락이용
+
+- 인류가 종이를 발명한 이후 미디어는 인간사회의 시공간 영역을 크게 확대.
+  - 산업혁명을 거치며 종이와 TV는 메시지를 대규모로 공중에 전달 가능  
+  - 정보혁명을 통해 컴퓨터로 발신자와 수신자의 상호작용 확대
+  - 모바일기술의 발달로 개개인이 핸드폰 휴대해 사용하고, 스마트기기에 핸드폰과 컴퓨터 통합  
+  
+- 미디어는 소통의 매개수단이므로 미디어의 기능도 소통의 주요 기능과 동일: 관계형성, 정보습득, 및 오락. 
+
+  - 미디어이용은 관계이용, 정보이용, 오락이용으로 구분. 
+
+
+---
+name: concept2b
+# 2b. 관계성
+
+- 인류는 사회구성을 자연환경에 대한 적응전략으로서 채택. 사회구성은 상당히 성공적이어 인류가 지구에서 번성하게 되는 기반이나, 동시에 인류에게 사회는 적응해야 하는 또 다른 환경으로 작용. 
+
+- 관계성(relatedness)은 인간의 근본 욕구 증 하나로서 사회집단에 소속돼 다른 사회적 존재와의 연결됨으로써 고립이 회피된 상태 (Baumeister &amp; Leary, 1995; Deci &amp; Ryan, 2000). 
+
+ 
+
+.footnote[
+
+Deci, E. L., &amp; Ryan, R. M. (2000). The ‘‘what’’ and ‘‘why’’ of goal pursuits: Human needs and the self-determination of behavior. _Psychological Inquiry, 11_, 227–268. http://dx.doi.org/10.1207/S15327965PLI1104_01.
+
+]
+
+
+---
+name: concept2c
+# 2c. 관계성: 고립 대 소속연결
+
+
+- 관계성은 인간행동의 이중체계의 일부로서 사회적 고립의 회피와 다른 사회적 존재와의 연결추구 등 크게 2개 요소로 구성. 
+  
+  - 사회적 고립(Social isolation): 사회집단에서 무시되거나 배제되는 것 (Williams, 2007)
+  
+  - 연결(Connectedness): 다른 사회적 존재와 호혜적으로 형성된 관계. 관계적 연결(relational connectedness)과 집합적 연결(collective connectedness)로 구성 (Hawkley et al., 2005). 관계적 연결과 집합적 연결은, 혼용해서는 안되나, 상호긴밀하게 얽여 있어 독립적이지 않고 상호보완적 (Brewer, 2007). 
+
+
+.footnote[
+
+Brewer, M. B. (2007). Social identity and close relationships: What is the connection? Presented at Sydney symposiums of social psychology 2007. http://
+www.sydneysymposium.unsw.edu.au/2007/Chapters/BrewerSSSP07.pdf.
+
+Hawkley, L. C., Browne, M. W., &amp; Cacioppo, J. T. (2005). How can I connect with thee? Let me count the ways. _Psychological Science, 16_, 798–804. http://dx.doi.org/10.1111/j.1467-9280.2005.01617.x.
+
+Williams, K. (2007). Ostracism. _Annual Review of Psychology, 58_, 425–452. http://dx.doi.org/10.1146/annurev.psych.58.110405.085641.
+
+]
+
+
+---
+name: concept2d
+# 2d. 정신건강
+
+- 정신건강(mental health): 문제를 해결할 수 있는 기능(업무수행, 호혜적 관계형성, 내면 세계 충만 등)이 유지된 상태(Gross &amp; Munoz, 1995). 
+
+  - 기능(functioning)이 유지된 상태와 기능 자체는 구분 필요. 관계성, 유능성, 자율성은 기능이고, 우울불안이나 만족감은 기능이 결핍되거나 충만한 상태. 
+
+- 기능과 기능이 유지된 상태 중 무엇이 정신건강의 본질인지를 두고 논쟁이 있으나(예: Ryan &amp; Deci, 2001), 이 연구에서는 기능을 기능이 유지된 상태를 예측하는 변수로 판단. 기능은 문제를 해결 또는 근본욕구를 충족하는 도구 혹은 자원이고, 기능이 제대로 작동한 결과를 통해 정신건강 유지. 
+
+- 기능의 요소에 대해서는 다양한 이론이 경합중. 심리적 안녕감(psychological well-being) 문헌에서는 자율성(autonomy), 환경통제(environmental mastery), 개인성장(personal growth), 긍정관계(positive relatedness to others), 삶의 목적(a sense of purpose in life), 자아수용(self-acceptance)을 들지만, 자기결정성(self-determination) 문헌에서는 자율성, 유능성, 관계성에만 국한. 소속감만을 가장 근본적인 기능으로 제시하는 문헌도 존재 (Pittman &amp; Zeigler, 2007). 
+
+
+.footnote[
+
+Gross, J. J., &amp; Muñoz, R. F. (1995). Emotion regulation and mental health. _Clinical Psychology: Science and Practice, 2_(2), 151-164. https://psycnet.apa.org/doi/10.1111/j.1468-2850.1995.tb00036.x
+
+Pittman, T. S., &amp; Zeigler, K. R. (2007). Basic human needs. In  A. W. Krugalnski &amp; E. T. Higgins (Eds.). Social psychology: Handbook of basic principles (pp. 473-489). Guildord. 
+
+Ryan, R. M., &amp; Deci, E. L. (2001). On happiness and human potentials: A review of research on hedonic and eudaimonic well-being. _Annual Review of Psychology,52_, 141–166. http://dx.doi.org/10.1146/annurev.psych.52.1.141
+
+]
+
+---
+name: concept2e
+# 2e. 정신건강: 불안녕감 vs. 안녕감
+
+- 정신건강도 인간행동의 이중체계의 일부로서 불안녕감(ill-being)과 안녕감(well-being)으로 구분 (Ryff et al. 2006). 
+
+  - 불안녕감: 기능의 이상작동에 대한 전반적인 평가. 우울불안과 같은 감정적 고통. 감정적 고통은 물리적 고통과 마찬가지로 문제발생(예: 사회적 고립)에 대해 주의를 기울여 문제를 해결하도록 하는 지표 (Watson &amp; Andrews, 2002). 
+  
+  - 안녕감: 기능의 정상적인 작동에 대한 전반적인 평가. 삶의 만족과 같은 감정적 쾌락. 적합도를 향상시키는 성취(예: 호혜적 관계형성)에 대해 보상을 통해 문제해결 지속하도록 하는 지표 (Buss, 1999; Diener, 2006). 
+  
+
+.footnote[
+
+Buss, D. M. (2000). The evolution of happiness. _American Psychologist, 55_(1), 15. https://doi.org/10.1037/0003-066X.55.1.15
+
+Diener, E. (2006). Guidelines for national indicators of subjective well-being and ill-being. _Journal of Happiness Studies, 7_(4), 397-404.https://doi.org/10.1007/s10902-006-9000-y
+
+Ryff, C. D., Love, G. D., Urry, H. L., Muller, D., Rosenkranz, M. A., Friedman, E. M., ... &amp; Singer, B. (2006). Psychological well-being and ill-being: do they have distinct or mirrored biological correlates?. _Psychotherapy and Psychosomatics, 75_(2), 85-95. https://doi.org/10.1159/000090892
+
+Watson, P. J., &amp; Andrews, P. W. (2002). Toward a revised evolutionary adaptationist analysis of depression: The social navigation hypothesis. _Journal of Affective Disorders, 72_(1), 1-14. https://doi.org/10.1016/S0165-0327(01)00459-1
+
+]  
+
+
+---
+name: concept2e
+# 2e. 안녕감: 기능 vs. 지표
+
+- 유데모닉(Eudaimonic) 안녕감 혹은 심리적 안녕감(Psychological well-being)을 지지하는 학자들은 안녕감이 다차원적 개념으로서 삶만족 단일 척도로는 온전하게 측정할 수 없다고 주장. 
+  
+  - 이들은 안녕감이란 쾌락의 경험이나 삶의만족 그 이상의 개념으로서 다양한 삶의 문제해결능력을 포괄하는 심리적 기능 혹은 유데모니아(Eudaimonia)이어야 한다고 지적 (예: Ruggeri et al., 2020). 
+  
+  - 심리적 안녕감과 주관적 안녕감에서 안녕감이란 용어를 동일하게 사용한다고 해서 기능에 대한 개념과 지표에 대한 개념을 동일한 수준의 개념으로 혼동. 
+  
+- 주관적 안녕감은, 쾌락이 공동통화로서 가치에 대한 범용적인 지표 역할을 하는 것처럼 (Cabanac, 1992), 삶에 대한 전반적인 평가 (Diener, 2006). 앞서 지적한대로 심리적안녕감은 기능으로서 지표인 주관적 안녕감을 예측하는 변수. 
+
+
+.footnote[
+
+Cabanac, M. (1992). Pleasure: the common currency. _Journal of Theoretical Biology, 155_(2), 173-200. https://doi.org/10.1016/S0022-5193(05)80594-6
+
+Ruggeri, K., Garcia-Garzon, E., Maguire, Á., Matz, S., &amp; Huppert, F. A. (2020). Well-being is more than happiness and life satisfaction: a multidimensional analysis of 21 countries. _Health and Quality of Life Outcomes, 18_(1), 1-16. https://doi.org/10.1186/s12955-020-01423-y
+
+]
 
 ---
 name: hypo1
 # 가설 &amp; 연구질문1
 
-**.tomato[미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가?]  **
+**.tomato[I. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가?]  **
 
-- **증강가설(augmenttaion hypothesis):**  
+- **증강가설(augmentation hypothesis):**  
 
   H1a: 미디어이용이 대면소통을 증강하므로 미디어이용 시간이 많을수록 대면소통시간은 증가할 것이다. 
   
@@ -94,9 +292,9 @@ name: hypo1
   H1b- 미디어이용이 대면소통을 전치하므로 미디어이용 시간이 많을수록 대면소통시간은 감소할 것이다. 
   
   
-RQ1a: 미디어의 유형별(핸드폰, 스마트기기, 컴퓨터, TV, 종이)이용 시간은 대면소통시간의 관련성은 차별적으로 나타날 것인가? 
+RQ1a: 미디어의 유형별(핸드폰, 스마트기기, 컴퓨터, TV, 종이)이용 시간은 대면소통시간의 관련성은 차별적으로 나타나는가? 
 
-RQ1b: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 대면소통시간의 관련성은 차별적으로 나타날 것인가? 
+RQ1b: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 대면소통시간의 관련성은 차별적으로 나타나는가? 
 
   
 .footnote[
@@ -104,22 +302,24 @@ RQ1b: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른
 ]
 
 
----
-name: concepts2
-# 2. 정신건강
-
-**.tomato[II. 대면소통과 미디어이용의 정신건강의 두 측면(불안녕감 &amp; 안녕감)에 대한 차별적 영향]**
-
-2. 대면소통과 미디어이용은 이용자의 정신건강의 두 측면(불안녕감과 안녕감)에 차별적 영향을 미치는가?  
-
-
-
 
 ---
-name: concepts3
-# 3. 사회관계
+name: hypo2
+# 가설 &amp; 연구질문2
 
-**.tomato[III. 사회관계 두 측면(고립감 &amp; 소속연결감)의 차별적 매개효과]**
+**.tomato[II. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?]**  
+
+- **증강가설(augmenttaion hypothesis):**  
+
+  H2a: 미디어이용이 대면소통을 증강하므로 미디어이용은 대면소통과 마찬가지로 고립감 및 소속연결감이 불안녕감과 안념감에 대한 긍정적 영향을 차별적으로 매개할 것이다. 
+
+
+- **전치가설(displacement hypothesis):**  
+
+  H2b: 미디어이용이 대면소통을 전치하므로 미디어이용은 대면소통과 달리  증가는 고립감 및 소속연결감이 불안녕감과 안녕감에한 부정적 영향을 차별적으로 매개할 것이다. 
+
+
+RQ2: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 고립감과 소속연결감을 통해 불안녕감과 안녕감에 차별적으로 영향을 미치는가? 
 
 
 
@@ -127,19 +327,21 @@ name: concepts3
 name: hypo3
 # 가설 &amp; 연구질문3
 
-**.tomato[사회관계성의 두 측면(고립감 &amp; 소속연결감)은 대면소통과 미디어이용의 정신건강에 대한 영향은 차별적으로 매개할 것인가?]**  
+**.tomato[III. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?]**  
+
 
 - **증강가설(augmenttaion hypothesis):**  
 
-  H3a: 미디어이용이 대면소통을 증강하므로 미디어이용 증가는 고립감 감소와 소속연결감 증가를 통해  정신건강의 두 측면(불안녕감과 안념감)에 긍정적으로 영향을 미칠 것이다.  
+  H3a: 미디어이용이 대면소통을 증강하므로 미디어이용시간이 많을수록 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 긍정적으로 조절할 것이다. 
 
 
 - **전치가설(displacement hypothesis):**  
 
-  H3b: 미디어이용이 대면소통을 전치하므로 미디어이용 증가는 고립감 증대와 소속연결감 감소를 통해 정신건강의 두 측면(불안녕감과 안녕감)에 부정적 영향을 미칠 것이다.  
+  H3b: 미디어이용이 대면소통을 전치하므로 미디어이용시간이 많을수록 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 부정적으로 조절할 것이다. 
 
 
-RQ3: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간은 고립감과 소속연결감을 통해 정신건강의 두 측면(불안녕감과 안녕감)에 차별적으로 영향을 미칠 것인가? 
+RQ3: 미디어 이용양식(관계이용, 정보이용, 오락이용)에 따른 이용시간 증가는  고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 관계를 차별적으로 조절하는가? 
+
 
 
 
@@ -228,7 +430,7 @@ Lucas, R. E., &amp; Brent Donnellan, M. (2012). Estimating the reliability of si
 
 ---
 name: method4
-# 측정3: 사회관계
+# 측정3: 고립감과 소속연결감
 
 사회관계는 개정판 UCLA 외로움 척도(Russell et al., 1980)에서 3요인(고립, 소속, 연결)을 구분한 (Hawkley et al., 2005)를 토대로 고립감과 소속연결감에 해당하는 문항을 이용해 측정했다. 대규모 설문수집이라 20문항을 모두 이용하지 않고, 고립, 소속, 연결 등 각 요인의 적재치를 기준으로 고립감 2개 문항("나는 사람들과 교류가 부족하다," "나는 다른 사람들로부터 소외감을 느낀다")을 선별했고(*r* = .63), 소속연결 4개 문항("나는 내 주위 사람들과 마음이 통한다,"
 "나는 내 주위 사람들과 많은 공통점을 가지고 있다," "나와 함께 얘기를 나눌 수 있는 사람들이 있다," "나는 의지할 사람들이 있다")을 선별했다(&amp;alpha; = .89). Kim (1997)의 한국어판 문항을 커뮤니케이션학 연구자 7인이 공동으로 각 문항의 한국어 표현을 가다듬었다. 7점 척도((1 = 전혀 그렇지 않다, 7 = 매우 그렇다)로 측정했다.
@@ -256,13 +458,13 @@ name: results
 
 
 
-<div id="rusnaytnjw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bgsasusiyw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#rusnaytnjw .gt_table {
+#bgsasusiyw .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -287,7 +489,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_heading {
+#bgsasusiyw .gt_heading {
   background-color: #F6F6F6;
   text-align: left;
   border-bottom-color: #F6F6F6;
@@ -299,7 +501,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_title {
+#bgsasusiyw .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -309,7 +511,7 @@ html {
   border-bottom-width: 0;
 }
 
-#rusnaytnjw .gt_subtitle {
+#bgsasusiyw .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -319,13 +521,13 @@ html {
   border-top-width: 0;
 }
 
-#rusnaytnjw .gt_bottom_border {
+#bgsasusiyw .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_col_headings {
+#bgsasusiyw .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #40C5FF;
@@ -340,7 +542,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_col_heading {
+#bgsasusiyw .gt_col_heading {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -360,7 +562,7 @@ html {
   overflow-x: hidden;
 }
 
-#rusnaytnjw .gt_column_spanner_outer {
+#bgsasusiyw .gt_column_spanner_outer {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -372,15 +574,15 @@ html {
   padding-right: 4px;
 }
 
-#rusnaytnjw .gt_column_spanner_outer:first-child {
+#bgsasusiyw .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#rusnaytnjw .gt_column_spanner_outer:last-child {
+#bgsasusiyw .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#rusnaytnjw .gt_column_spanner {
+#bgsasusiyw .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #ECECEC;
@@ -392,7 +594,7 @@ html {
   width: 100%;
 }
 
-#rusnaytnjw .gt_group_heading {
+#bgsasusiyw .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #F6F6F6;
@@ -414,7 +616,7 @@ html {
   vertical-align: middle;
 }
 
-#rusnaytnjw .gt_empty_group_heading {
+#bgsasusiyw .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #F6F6F6;
@@ -429,15 +631,15 @@ html {
   vertical-align: middle;
 }
 
-#rusnaytnjw .gt_from_md > :first-child {
+#bgsasusiyw .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#rusnaytnjw .gt_from_md > :last-child {
+#bgsasusiyw .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#rusnaytnjw .gt_row {
+#bgsasusiyw .gt_row {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
@@ -456,7 +658,7 @@ html {
   overflow-x: hidden;
 }
 
-#rusnaytnjw .gt_stub {
+#bgsasusiyw .gt_stub {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -468,7 +670,7 @@ html {
   padding-left: 12px;
 }
 
-#rusnaytnjw .gt_summary_row {
+#bgsasusiyw .gt_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -478,7 +680,7 @@ html {
   padding-right: 5px;
 }
 
-#rusnaytnjw .gt_first_summary_row {
+#bgsasusiyw .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -488,7 +690,7 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_grand_summary_row {
+#bgsasusiyw .gt_grand_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -498,7 +700,7 @@ html {
   padding-right: 5px;
 }
 
-#rusnaytnjw .gt_first_grand_summary_row {
+#bgsasusiyw .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -508,11 +710,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_striped {
+#bgsasusiyw .gt_striped {
   background-color: #ECECEC;
 }
 
-#rusnaytnjw .gt_table_body {
+#bgsasusiyw .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -521,7 +723,7 @@ html {
   border-bottom-color: #FFFFFF;
 }
 
-#rusnaytnjw .gt_footnotes {
+#bgsasusiyw .gt_footnotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -535,13 +737,13 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_footnote {
+#bgsasusiyw .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#rusnaytnjw .gt_sourcenotes {
+#bgsasusiyw .gt_sourcenotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -555,41 +757,41 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#rusnaytnjw .gt_sourcenote {
+#bgsasusiyw .gt_sourcenote {
   font-size: 12px;
   padding: 4px;
 }
 
-#rusnaytnjw .gt_left {
+#bgsasusiyw .gt_left {
   text-align: left;
 }
 
-#rusnaytnjw .gt_center {
+#bgsasusiyw .gt_center {
   text-align: center;
 }
 
-#rusnaytnjw .gt_right {
+#bgsasusiyw .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#rusnaytnjw .gt_font_normal {
+#bgsasusiyw .gt_font_normal {
   font-weight: normal;
 }
 
-#rusnaytnjw .gt_font_bold {
+#bgsasusiyw .gt_font_bold {
   font-weight: bold;
 }
 
-#rusnaytnjw .gt_font_italic {
+#bgsasusiyw .gt_font_italic {
   font-style: italic;
 }
 
-#rusnaytnjw .gt_super {
+#bgsasusiyw .gt_super {
   font-size: 65%;
 }
 
-#rusnaytnjw .gt_footnote_marks {
+#bgsasusiyw .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -780,13 +982,13 @@ name: results1b
 
 .right-column8[
 
-<div id="igcnekvfuq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="xqjifchdlv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#igcnekvfuq .gt_table {
+#xqjifchdlv .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -811,7 +1013,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_heading {
+#xqjifchdlv .gt_heading {
   background-color: #F6F6F6;
   text-align: left;
   border-bottom-color: #F6F6F6;
@@ -823,7 +1025,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_title {
+#xqjifchdlv .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -833,7 +1035,7 @@ html {
   border-bottom-width: 0;
 }
 
-#igcnekvfuq .gt_subtitle {
+#xqjifchdlv .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -843,13 +1045,13 @@ html {
   border-top-width: 0;
 }
 
-#igcnekvfuq .gt_bottom_border {
+#xqjifchdlv .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_col_headings {
+#xqjifchdlv .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #40C5FF;
@@ -864,7 +1066,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_col_heading {
+#xqjifchdlv .gt_col_heading {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -884,7 +1086,7 @@ html {
   overflow-x: hidden;
 }
 
-#igcnekvfuq .gt_column_spanner_outer {
+#xqjifchdlv .gt_column_spanner_outer {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -896,15 +1098,15 @@ html {
   padding-right: 4px;
 }
 
-#igcnekvfuq .gt_column_spanner_outer:first-child {
+#xqjifchdlv .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#igcnekvfuq .gt_column_spanner_outer:last-child {
+#xqjifchdlv .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#igcnekvfuq .gt_column_spanner {
+#xqjifchdlv .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #ECECEC;
@@ -916,7 +1118,7 @@ html {
   width: 100%;
 }
 
-#igcnekvfuq .gt_group_heading {
+#xqjifchdlv .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #F6F6F6;
@@ -938,7 +1140,7 @@ html {
   vertical-align: middle;
 }
 
-#igcnekvfuq .gt_empty_group_heading {
+#xqjifchdlv .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #F6F6F6;
@@ -953,15 +1155,15 @@ html {
   vertical-align: middle;
 }
 
-#igcnekvfuq .gt_from_md > :first-child {
+#xqjifchdlv .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#igcnekvfuq .gt_from_md > :last-child {
+#xqjifchdlv .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#igcnekvfuq .gt_row {
+#xqjifchdlv .gt_row {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
@@ -980,7 +1182,7 @@ html {
   overflow-x: hidden;
 }
 
-#igcnekvfuq .gt_stub {
+#xqjifchdlv .gt_stub {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -992,7 +1194,7 @@ html {
   padding-left: 12px;
 }
 
-#igcnekvfuq .gt_summary_row {
+#xqjifchdlv .gt_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -1002,7 +1204,7 @@ html {
   padding-right: 5px;
 }
 
-#igcnekvfuq .gt_first_summary_row {
+#xqjifchdlv .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1012,7 +1214,7 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_grand_summary_row {
+#xqjifchdlv .gt_grand_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -1022,7 +1224,7 @@ html {
   padding-right: 5px;
 }
 
-#igcnekvfuq .gt_first_grand_summary_row {
+#xqjifchdlv .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1032,11 +1234,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_striped {
+#xqjifchdlv .gt_striped {
   background-color: #ECECEC;
 }
 
-#igcnekvfuq .gt_table_body {
+#xqjifchdlv .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1045,7 +1247,7 @@ html {
   border-bottom-color: #FFFFFF;
 }
 
-#igcnekvfuq .gt_footnotes {
+#xqjifchdlv .gt_footnotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -1059,13 +1261,13 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_footnote {
+#xqjifchdlv .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#igcnekvfuq .gt_sourcenotes {
+#xqjifchdlv .gt_sourcenotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -1079,41 +1281,41 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#igcnekvfuq .gt_sourcenote {
+#xqjifchdlv .gt_sourcenote {
   font-size: 12px;
   padding: 4px;
 }
 
-#igcnekvfuq .gt_left {
+#xqjifchdlv .gt_left {
   text-align: left;
 }
 
-#igcnekvfuq .gt_center {
+#xqjifchdlv .gt_center {
   text-align: center;
 }
 
-#igcnekvfuq .gt_right {
+#xqjifchdlv .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#igcnekvfuq .gt_font_normal {
+#xqjifchdlv .gt_font_normal {
   font-weight: normal;
 }
 
-#igcnekvfuq .gt_font_bold {
+#xqjifchdlv .gt_font_bold {
   font-weight: bold;
 }
 
-#igcnekvfuq .gt_font_italic {
+#xqjifchdlv .gt_font_italic {
   font-style: italic;
 }
 
-#igcnekvfuq .gt_super {
+#xqjifchdlv .gt_super {
   font-size: 65%;
 }
 
-#igcnekvfuq .gt_footnote_marks {
+#xqjifchdlv .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1227,13 +1429,13 @@ name: results1c
 
 .right-column8[
 
-<div id="hxxpfmerls" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="wxrpdmywos" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 html {
   font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#hxxpfmerls .gt_table {
+#wxrpdmywos .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1258,7 +1460,7 @@ html {
   border-left-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_heading {
+#wxrpdmywos .gt_heading {
   background-color: #F6F6F6;
   text-align: left;
   border-bottom-color: #F6F6F6;
@@ -1270,7 +1472,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_title {
+#wxrpdmywos .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1280,7 +1482,7 @@ html {
   border-bottom-width: 0;
 }
 
-#hxxpfmerls .gt_subtitle {
+#wxrpdmywos .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1290,13 +1492,13 @@ html {
   border-top-width: 0;
 }
 
-#hxxpfmerls .gt_bottom_border {
+#wxrpdmywos .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 0px;
   border-bottom-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_col_headings {
+#wxrpdmywos .gt_col_headings {
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #40C5FF;
@@ -1311,7 +1513,7 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_col_heading {
+#wxrpdmywos .gt_col_heading {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -1331,7 +1533,7 @@ html {
   overflow-x: hidden;
 }
 
-#hxxpfmerls .gt_column_spanner_outer {
+#wxrpdmywos .gt_column_spanner_outer {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -1343,15 +1545,15 @@ html {
   padding-right: 4px;
 }
 
-#hxxpfmerls .gt_column_spanner_outer:first-child {
+#wxrpdmywos .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hxxpfmerls .gt_column_spanner_outer:last-child {
+#wxrpdmywos .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hxxpfmerls .gt_column_spanner {
+#wxrpdmywos .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #ECECEC;
@@ -1363,7 +1565,7 @@ html {
   width: 100%;
 }
 
-#hxxpfmerls .gt_group_heading {
+#wxrpdmywos .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #F6F6F6;
@@ -1385,7 +1587,7 @@ html {
   vertical-align: middle;
 }
 
-#hxxpfmerls .gt_empty_group_heading {
+#wxrpdmywos .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #F6F6F6;
@@ -1400,15 +1602,15 @@ html {
   vertical-align: middle;
 }
 
-#hxxpfmerls .gt_from_md > :first-child {
+#wxrpdmywos .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hxxpfmerls .gt_from_md > :last-child {
+#wxrpdmywos .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hxxpfmerls .gt_row {
+#wxrpdmywos .gt_row {
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 5px;
@@ -1427,7 +1629,7 @@ html {
   overflow-x: hidden;
 }
 
-#hxxpfmerls .gt_stub {
+#wxrpdmywos .gt_stub {
   color: #333333;
   background-color: #F6F6F6;
   font-size: 100%;
@@ -1439,7 +1641,7 @@ html {
   padding-left: 12px;
 }
 
-#hxxpfmerls .gt_summary_row {
+#wxrpdmywos .gt_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -1449,7 +1651,7 @@ html {
   padding-right: 5px;
 }
 
-#hxxpfmerls .gt_first_summary_row {
+#wxrpdmywos .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1459,7 +1661,7 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_grand_summary_row {
+#wxrpdmywos .gt_grand_summary_row {
   color: #333333;
   background-color: #F6F6F6;
   text-transform: inherit;
@@ -1469,7 +1671,7 @@ html {
   padding-right: 5px;
 }
 
-#hxxpfmerls .gt_first_grand_summary_row {
+#wxrpdmywos .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1479,11 +1681,11 @@ html {
   border-top-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_striped {
+#wxrpdmywos .gt_striped {
   background-color: #ECECEC;
 }
 
-#hxxpfmerls .gt_table_body {
+#wxrpdmywos .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1492,7 +1694,7 @@ html {
   border-bottom-color: #FFFFFF;
 }
 
-#hxxpfmerls .gt_footnotes {
+#wxrpdmywos .gt_footnotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -1506,13 +1708,13 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_footnote {
+#wxrpdmywos .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#hxxpfmerls .gt_sourcenotes {
+#wxrpdmywos .gt_sourcenotes {
   color: #333333;
   background-color: #F6F6F6;
   border-bottom-style: none;
@@ -1526,41 +1728,41 @@ html {
   border-right-color: #D3D3D3;
 }
 
-#hxxpfmerls .gt_sourcenote {
+#wxrpdmywos .gt_sourcenote {
   font-size: 12px;
   padding: 4px;
 }
 
-#hxxpfmerls .gt_left {
+#wxrpdmywos .gt_left {
   text-align: left;
 }
 
-#hxxpfmerls .gt_center {
+#wxrpdmywos .gt_center {
   text-align: center;
 }
 
-#hxxpfmerls .gt_right {
+#wxrpdmywos .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hxxpfmerls .gt_font_normal {
+#wxrpdmywos .gt_font_normal {
   font-weight: normal;
 }
 
-#hxxpfmerls .gt_font_bold {
+#wxrpdmywos .gt_font_bold {
   font-weight: bold;
 }
 
-#hxxpfmerls .gt_font_italic {
+#wxrpdmywos .gt_font_italic {
   font-style: italic;
 }
 
-#hxxpfmerls .gt_super {
+#wxrpdmywos .gt_super {
   font-size: 65%;
 }
 
-#hxxpfmerls .gt_footnote_marks {
+#wxrpdmywos .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -1673,6 +1875,7 @@ html {
 name: results2a0
 # 모형: 매개 모형
 
+
 - X: 대면소통, 관계이용, 정보이용, 오락이용  
 - MI: 고립감, 소속연결감  
 - Y: 불안녕감, 안녕감  
@@ -1694,7 +1897,13 @@ name: results2a
 
 &lt;img src="rconf_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
 ]
+
 .footnote[
+
+- ADE: Average Direct Effect(direct effect of IV on DV removing MV)  
+- ACME: Average Causal Mediation Effect(indirect effect of IV on DV through MV)
+- Total effect: IV &amp; MV on DV  
+- ADE가 작을수록, ACME가 클수록(Total effect와 ADE차이가 클수록) 매개효과가 크다.
 
 ]
 
@@ -1758,13 +1967,15 @@ name: results3a1
 # 결과: 가설3a1: 불안녕감: 관계이용 조절매개
 
 .left-column2[
+&lt;img src="rconf_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
+
 
 ]
 
 
 .right-column8[
 
-&lt;img src="rconf_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1779,12 +1990,19 @@ name: results3a2
 
 .left-column2[
 
+관계이용이 증가할수록 대면빈도-소속연결-삶만족 매개관계 소명.
+관계이용이 증가할수록 대면빈도-소속연결-삶만족 매개관계 소명. 
+관계이용이 증가할수록 대면빈도-소속연결-삶만족 매개관계 소명. 
+관계이용이 증가할수록 대면빈도-소속연결-삶만족 매개관계 소명. 
+
+&lt;img src="rconf_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
+
 ]
 
 
 .right-column8[
 
-&lt;img src="rconf_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 .footnote[
@@ -1804,7 +2022,7 @@ name: results3b1
 
 
 .right-column8[
-&lt;img src="rconf_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
 ]
 
 .footnote[
@@ -1823,7 +2041,7 @@ name: results3b2
 
 .right-column8[
 
-&lt;img src="rconf_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -1848,7 +2066,91 @@ name: results3c1
 
 .right-column8[
 
-&lt;img src="rconf_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
+
+```
+[[1]]
+
+	Test of ACME(covariates.1) - ACME(covariates.2) = 0
+
+data:  estimates from med_init
+ACME(covariates.1) - ACME(covariates.2) = -0.08, p-value &lt;2e-16
+alternative hypothesis: true ACME(covariates.1) - ACME(covariates.2) is not equal to 0
+95 percent confidence interval:
+ -0.1048 -0.0502
+
+
+	Test of ADE(covariates.1) - ADE(covariates.2) = 0
+
+data:  estimates from med_init
+ADE(covariates.1) - ADE(covariates.2) = -0.03, p-value = 0.3
+alternative hypothesis: true ADE(covariates.1) - ADE(covariates.2) is not equal to 0
+95 percent confidence interval:
+ -0.0839  0.0128
+
+
+[[2]]
+
+	Test of ACME(covariates.1) - ACME(covariates.2) = 0
+
+data:  estimates from med_init
+ACME(covariates.1) - ACME(covariates.2) = -0.02, p-value &lt;2e-16
+alternative hypothesis: true ACME(covariates.1) - ACME(covariates.2) is not equal to 0
+95 percent confidence interval:
+ -0.02654 -0.00809
+
+
+	Test of ADE(covariates.1) - ADE(covariates.2) = 0
+
+data:  estimates from med_init
+ADE(covariates.1) - ADE(covariates.2) = -0.03, p-value = 0.3
+alternative hypothesis: true ADE(covariates.1) - ADE(covariates.2) is not equal to 0
+95 percent confidence interval:
+ -0.0752  0.0221
+```
+
+```
+[[1]]
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+(Inference Conditional on the Covariate Values Specified in `covariates')
+
+               Estimate 95% CI Lower 95% CI Upper p-value
+ACME           -0.00843     -0.02659         0.02    0.40
+ADE             0.00136     -0.02927         0.03    0.98
+Total Effect   -0.00707     -0.04974         0.02    0.70
+Prop. Mediated  0.41212     -2.90650        15.66    0.58
+
+Sample Size Used: 5889 
+
+
+Simulations: 100 
+
+
+[[2]]
+
+Causal Mediation Analysis 
+
+Quasi-Bayesian Confidence Intervals
+
+(Inference Conditional on the Covariate Values Specified in `covariates')
+
+                Estimate 95% CI Lower 95% CI Upper p-value    
+ACME            -0.01566     -0.02163        -0.01  &lt;2e-16 ***
+ADE              0.01350     -0.01847         0.04    0.36    
+Total Effect    -0.00216     -0.03330         0.03    0.90    
+Prop. Mediated   0.45740    -11.72048        14.82    0.90    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Sample Size Used: 5889 
+
+
+Simulations: 100 
+```
 
 ]
 
@@ -1868,7 +2170,7 @@ name: results3c2
 
 .right-column8[
 
-&lt;img src="rconf_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+&lt;img src="rconf_files/figure-html/unnamed-chunk-22-1.png" style="display: block; margin: auto;" /&gt;
 
 ]
 
