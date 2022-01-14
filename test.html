@@ -1,241 +1,271 @@
 <!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
-
-<head>
-
-<meta charset="utf-8">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta property="dc:format" content="text/html">
-<meta name="generator" content="pandoc">
-<meta name="viewport" content="width=device-width">
-<meta property="dc:type" content="Text">
-<meta property="dc:language" content="en">
-<meta property="dc:title og:title" content="A Capitalized Title: Something about a Package foo">
-
-<meta property="og:image" content="https://www.jstatsoft.org/public/site/images/jstatsoft/jsslogo.jpg">
-<link rel="icon" href="https://www.jstatsoft.org/public/journals/1/journalFavicon_en_US.gif">
-<meta name="description" property="dc:description og:description schema:description" content="A Capitalized Title: Something about a Package foo">
+<html lang="" xml:lang="">
+  <head>
+    <title>SSK심포지움I: 팬데믹 시기 삶의 양식과 마음건강</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="안도현(제주대학교)" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/rconf.css" type="text/css" />
+    <link rel="stylesheet" href="css/rconf-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
 
 
-<meta name="keywords" property="dc:subject" content="keywords, not capitalized, Java">
 
-<title>A Capitalized Title: Something about a Package foo</title>
 
-<script>
-window.PagedConfig = {
-  before: async () => {
-    // Expand the citations links
-    let citations = document.querySelectorAll('.citation');
-    for (let citation of citations) {
-      let anchor = citation.querySelector('a');
-      if (!anchor) continue;
-      let span = document.createElement('span');
-      span.innerHTML = anchor.innerHTML
-      anchor.insertAdjacentElement('afterend', span)
-      let href = anchor.getAttribute('href')
-      anchor.remove();
 
-      let newAnchor = document.createElement('a');
-      newAnchor.setAttribute('href', href);
-      citation.insertAdjacentElement('beforebegin', newAnchor);
-      newAnchor.appendChild(citation);
-    }
+class: title-slide, left, bottom
 
-    // For the table captions, we would want to write this CSS rule:
-    //     caption {caption-side: bottom-outside;}
-    // However, the bottom-outside value is not standard and not implemented in Chrome.
-    // So, we need to modify the DOM.
-    let tables = document.querySelectorAll('table');
-    for (let table of tables) {
-      let caption = table.querySelector('caption');
-      if (!caption) continue;
-      let tableContainer = document.createElement('div');
-      tableContainer.className = 'table-container';
-      table.insertAdjacentElement('beforebegin', tableContainer);
-      tableContainer.appendChild(table);
-      let bookdownIdentifier = caption.querySelector('span[id^="tab\\:"]');
-      if (!!bookdownIdentifier) {
-        let tableId = bookdownIdentifier.id;
-        bookdownIdentifier.removeAttribute('id');
-        table.id = tableId;
-      }
-      let newCaption = document.createElement('p');
-      newCaption.className = 'caption';
-      newCaption.innerHTML = caption.innerHTML;
-      caption.remove();
-      tableContainer.appendChild(newCaption);
+# SSK심포지움I: 팬데믹 시기 삶의 양식과 마음건강
+----
+## **대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향**
+### 안도현(제주대학교)
+### 2022-1-19
+
+---
+class: inverse, middle
+name: data-science-case
+
+# .warmyellow[발표 개요]
+
+----
+
+.pull-left[
+
+.burlywood[연구문제]
+
+**.tomato[I. 대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향: 고립감과 소속연결감의 매개효과]**
+
+1. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
+
+2. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?
+
+3. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?  
+
+
+]
+
+.pull-right[   
+.left[
+
+**.CornflowerBlue[순 서]** 
+
+1. [개념 &amp; 가설]
+  1. [미디어이용과 대면소통: 증강 vs. 전치](#concepts1)  
+  2. [사회관계: 고립감과 소속연결감](#method1)  
+  3. [정신건강: 안녕감과 불안녕감](#hypo1)   
+
+2. [방 법](#method1)  
+
+3. [결 과](#results1)  
+
+4. [논 의](#discussion1)  
+
+]
+] &lt;!--end of right-column--&gt;
+
+
+&lt;!--------------------------  슬라이드 본문 시작 -------------------------------------&gt;
+
+
+
+
+
+
+
+
+---
+name: results2e
+# 결과: 대면소통 매개 요약 
+
+.left-column6[
+대면소통은 우울불안에 대해 고립감과 소속연결이 모두 매개. 반면, 삶만족에 대해서는 소속연결감만 매개하고, 고립감은 매개하지 않는다. 
+]
+
+.right-column4[
+&lt;img src="test_files/figure-html/unnamed-chunk-2-1.png" style="display: block; margin: auto;" /&gt;
+]  
+
+.footnote[
+
+]
+
+
+
+---
+name: results3a1
+# 결과: 가설3a1: 불안녕감: 관계이용 조절매개
+
+
+.left-column8[
+
+&lt;img src="test_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+.right-column2[
+
+단순 매개모형
+
+&lt;img src="test_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"highlightLanguage": "r",
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
     }
   }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+<!--Hat-tip: https://www.garrickadenbuie.com/blog/xaringan-tip-logo-all-slides/-->
+<style>
+.logo {
+  background-image: url(https://raw.githubusercontent.com/dataminds/art/main/gh-pages/fig/logo.PNG);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
 }
+</style>
+
+<script>
+document
+  .querySelectorAll(
+    '.remark-slide-content' +
+    ':not(.title-slide)' +
+    // add additional classes to exclude here, e.g.
+    ':not(.inverse)' +
+    ':not(.hide-logo)'
+  )
+  .forEach(el => {
+    el.innerHTML += '<div class="logo"></div>';
+  });
 </script>
 
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
-(function() {
-  let beforePaged = PagedConfig.before;
-
-  window.PagedConfig = {
-    before: async () => {
-      await beforePaged();
-      await new Promise((resolve, reject) => {
-        var script = document.createElement("script");
-        script.type = "text/javascript";
-        var src = `https://mathjax.rstudio.com/latest/MathJax.js` + "?config=TeX-MML-AM_CHTML";
-        if (location.protocol !== "file:" && /^https?:/.test(src))
-          src = src.replace(/^https?:/, '');
-        script.src = src;
-        window.MathJax = {
-          AuthorInit: () => {
-            MathJax.Hub.Register.StartupHook("Begin", () => {
-              MathJax.Hub.Queue(resolve);
-            });
-          }
-        };
-        document.getElementsByTagName("head")[0].appendChild(script);
-      });
-    }
-  };
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
 })();
 </script>
-
-<script src="test_files/header-attrs-2.11/header-attrs.js"></script>
-<link href="test_files/paged-0.16/css/jss-fonts.css" rel="stylesheet" />
-<link href="test_files/paged-0.16/css/jss-page.css" rel="stylesheet" />
-<link href="test_files/paged-0.16/css/jss.css" rel="stylesheet" />
-<script src="test_files/paged-0.16/js/config.js"></script>
-<script src="test_files/paged-0.16/js/paged.js"></script>
-<script src="test_files/paged-0.16/js/hooks.js"></script>
-
-
-
-
-</head>
-
-<body>
-  <div style="display:none" aria-hidden="true">
-  \(
-    \let\pkg=\mathbf
-    \let\proglang=\textsf
-    \let\code=\texttt
-    \newcommand{\E}{\mathsf{E}}
-    \newcommand{\VAR}{\mathsf{VAR}}
-    \newcommand{\COV}{\mathsf{COV}}
-    \newcommand{\Prob}{\mathsf{P}}
-  \)
-  </div>
-
-
-<header class="document-header">
-<img class="journal-name" alt="Journal of Statistical Software" src="https://www.jstatsoft.org/public/journals/1/homeHeaderTitleImage_en_US.png">
-<p class="header-meta">
-  <span class="issue">MMMMMM YYYY, Volume VV, Issue II.</span>
-  <a href="https://doi.org/10.18637/jss.v000.i00" class="doi">doi: 10.18637/jss.v000.i00</a>
-</p>
-</header>
-
-<article>
-
-<header id="header" class="title-page">
-<h1 class="title">A Capitalized Title: Something about a Package <strong>foo</strong></h1>
-<span class="shorttitle" style="display: none;" aria-hidden="true"><strong>foo</strong>: A Capitalized Title</span>
-<div class="authors-container" role="list">
-<p class="author-item" role="listitem" style="--rank: 1;">
-<span class="author">Yihui Xie</span>
-<br><span class="author-affil">
-RStudio
-</span>
-</p>
-<p class="author-item" role="listitem" style="--rank: 2;">
-<span class="author">Romain Lesur</span>
-<br><span class="author-affil">
-Affiliation
-</span>
-</p>
-</div>
-</header>
-
-<section class="abstract" property="dc:abstract">
-<h2 class="abstract-header">Abstract</h2>
-<div class="abstract-content">
-<p>The abstract of the article.</p>
-</div>
-<section class="keywords" role="list" aria-labelledby="keywords-header">
-<p><span id="keywords-header" class="keywords-heading" aria-level="3" role="heading">Keywords</span>: <span role="listitem">keywords</span>, <span role="listitem">not capitalized</span>, <span role="listitem"><span class="proglang">Java</span></span>.</p>
-</section>
-</section>
-
-<main role="main">
-<div id="introduction" class="section level1">
-<h1>Introduction</h1>
-<p>This template demonstrates some of the basic <span class="proglang">markdown</span> you’ll need to know to create a JSS article with <strong>pagedown</strong> <span class="citation">(<a href="#ref-R-pagedown" role="doc-biblioref">Xie, Lesur, Thorne, and Tan 2021</a>)</span>.</p>
-<div id="code-formatting" class="section level2">
-<h2>Code formatting</h2>
-<p>You should use <strong>Pandoc</strong>’s <span class="proglang">markdown</span> but you also can use <span class="math inline">\(\LaTeX\)</span> commands:</p>
-<ul>
-<li><span class="proglang">Java</span> or <span class="math inline">\(\proglang{Java}\)</span></li>
-<li><strong>plyr</strong>, <span class="pkg">plyr</span> or <span class="math inline">\(\pkg{plyr}\)</span></li>
-<li><code>print("abc")</code> or <span class="math inline">\(\code{print(&quot;abc&quot;)}\)</span></li>
-</ul>
-</div>
-</div>
-<div id="r-code" class="section level1">
-<h1><span class="proglang">R</span> code</h1>
-<p>Can be inserted in regular <span class="proglang">R Markdown</span> blocks.</p>
-<pre class="r r-chunk-code"><code>R&gt; x &lt;- 1:10
-R&gt; x</code></pre>
-<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-</div>
-<div id="render-the-document" class="section level1">
-<h1>Render the document</h1>
-<p>If you use the option <code>self_contained: false</code> (see line #22 of this <code>Rmd</code> file), don’t click on the <code>Knit</code> button in RStudio. Use instead the <strong>xaringan</strong> <span class="citation">(<a href="#ref-R-xaringan" role="doc-biblioref">Xie 2021</a>)</span> RStudio add-in <em>Infinite Moon Reader</em>.</p>
-</div>
-<div id="references" class="section level1 unnumbered">
-<h1>References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" line-spacing="2">
-<div id="ref-R-xaringan" class="csl-entry">
-Xie Y (2021). <em>Xaringan: Presentation Ninja</em>. Retrieved from <a href="https://github.com/yihui/xaringan">https://github.com/yihui/xaringan</a>
-</div>
-<div id="ref-R-pagedown" class="csl-entry">
-Xie Y, Lesur R, Thorne B, Tan X (2021). <em>Pagedown: Paginate the HTML Output of r Markdown with CSS for Print</em>. Retrieved from <a href="https://github.com/rstudio/pagedown">https://github.com/rstudio/pagedown</a>
-</div>
-</div>
-</div>
-</main>
-
-<footer class="article-footer">
-<h3 class="affil-header">Affiliation:</h3>
-<address>
-<p class="author">Yihui Xie</p>
-<p class="author-affil">RStudio</p>
-<p class="author-address"><p>First line<br />
-Second line</p></p>
-<p>E-mail: <a href="mailto:name@company.com" class="email">name@company.com</a></p>
-<p>URL: <a href="https://rstudio.com" class="uri">https://rstudio.com</a></p>
-</address>
-<div class="last-page-footer">
-<p class="jss-meta">
-<img class="journal-name" alt="Journal of Statistical Software" src="https://www.jstatsoft.org/public/journals/1/homeHeaderTitleImage_en_US.png"> <a class="uri" href="https://www.jstatsoft.org/">http://www.jstatsoft.org/</a><br>
-published by the Foundation for Open Access Statistics <a class="uri" href="http://www.foastat.org/">http://www.foastat.org/</a>
-</p>
-<p class="footer-issue">
-MMMMMM YYYY, Volume VV, Issue II
-<br><a href="https://doi.org/10.18637/jss.v000.i00" class="doi">doi: 10.18637/jss.v000.i00</a>
-</p>
-<p class="info-dates">
-<em>Submitted:</em> yyyy-mm-dd<br>
-<em>Accepted:</em> yyyy-mm-dd
-</p>
-</div>
-</footer>
-</article>
-
-
-<script>
-// when the page is about to reload via servr, remember the scroll position
-document.addEventListener('servr:reload', function(e) {
-  sessionStorage.setItem('pagedown-scroll', window.scrollY);
-});
-</script>
-</body>
+  </body>
 </html>

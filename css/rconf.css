@@ -188,8 +188,20 @@ blockquote {
 
 
 /* Two-column layout */
-.left-column4 {
-  width: 40%;
+.left-column8 {
+  width: 75%;
+  height: 92%;
+  float: left;
+}
+.right-column2 {
+  width: 20%;
+  float: right;
+  padding-top: 1em;
+}
+
+
+.left-column6 {
+  width: 60%;
   height: 92%;
   float: left;
 }
@@ -198,6 +210,18 @@ blockquote {
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
   color: #1381B0;
+}
+.right-column4 {
+  width: 35%;
+  float: right;
+  padding-top: 1em;
+}
+
+
+.left-column4 {
+  width: 40%;
+  height: 92%;
+  float: left;
 }
 .right-column6 {
   width: 55%;
@@ -205,16 +229,11 @@ blockquote {
   padding-top: 1em;
 }
 
+
 .left-column3 {
   width: 30%;
   height: 92%;
   float: left;
-}
-.left-column h2, .left-column h3 {
-  color: #1381B099;
-}
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #1381B0;
 }
 .right-column7 {
   width: 65%;
@@ -224,18 +243,12 @@ blockquote {
 
 
 .left-column2 {
-  width: 20%;
-  height: 92%;
+  width: 25%;
   float: left;
 }
-.left-column h2, .left-column h3 {
-  color: #1381B099;
-}
-.left-column h2:last-of-type, .left-column h3:last-child {
-  color: #1381B0;
-}
+
 .right-column8 {
-  width: 75%;
+  width: 70%;
   float: right;
   padding-top: 1em;
 }

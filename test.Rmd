@@ -1,57 +1,313 @@
 ---
-author:
-  - name: Yihui Xie
-    affiliation: RStudio
-    address: |
-      First line  
-      Second line
-    email: <name@company.com>
-    url: <https://rstudio.com>
-  - name: Romain Lesur
-    affiliation: Affiliation
-title: "A Capitalized Title: Something about a Package **foo**"
-shorttitle: "**foo**:  A Capitalized Title"
-abstract: |
-  The abstract of the article.
-# at least one keyword must be supplied
-keywords: [keywords, not capitalized, "[Java]{.proglang}"]
-links-to-footnotes: true
-paged-footnotes: true
-bibliography: index.bib
-output: 
-  pagedown::jss_paged:
-    self_contained: false
-# uncomment this line to produce HTML and PDF in RStudio:
-#knit: pagedown::chrome_print
+title: "SSK심포지움I: 팬데믹 시기 삶의 양식과 마음건강"
+subtitle: "대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향"
+author: "안도현(제주대학교)"
+institute: "서울대 팬데믹과 포스트팬데믹 시기 디지털소통양식과 정신건강 SSK사업단"
+date: "2022-1-19"
+output:
+  xaringan::moon_reader:
+    css: 
+      - [default]
+      - css/rconf.css
+      - css/rconf-fonts.css
+    lib_dir: libs
+    seal: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      highlightLanguage: ["r"]
+      countIncrementalSlides: false
+      ratio: "16:9"
+    includes:
+      after_body: [css/rconf-logo.html]
+editor_options: 
+  chunk_output_type: console
 ---
 
-# Introduction
+```{r setup, include = FALSE}
+library(tidyverse)
 
-This template demonstrates some of the basic [markdown]{.proglang} you'll need to know to create a JSS article with **pagedown** [@R-pagedown].
+options(
+  htmltools.dir.version = FALSE, 
+  htmltools.preserve.raw = FALSE,
+  tibble.width = 60, tibble.print_min = 6,
+  crayon.enabled = TRUE
+)
 
-## Code formatting
+knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE,
+                      comment="", digits = 3, tidy = FALSE, prompt = FALSE, fig.align = 'center',
+                      fig.width = 7.252,
+                      fig.height = 4,
+                      dpi = 300)
 
-You should use **Pandoc**'s [markdown]{.proglang} but you also can use $\LaTeX$ commands:
+# uncomment the following lines if you want to use the NHS-R theme colours by default
+# scale_fill_continuous <- partial(scale_fill_nhs, discrete = FALSE)
+# scale_fill_discrete <- partial(scale_fill_nhs, discrete = TRUE)
+# scale_colour_continuous <- partial(scale_colour_nhs, discrete = FALSE)
+# scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
+```
 
-* [Java]{.proglang} or $\proglang{Java}$ 
-* **plyr**, [plyr]{.pkg} or $\pkg{plyr}$
-* `print("abc")` or $\code{print("abc")}$
 
-# [R]{.proglang} code
+class: title-slide, left, bottom
 
-Can be inserted in regular [R Markdown]{.proglang} blocks.
+# `r rmarkdown::metadata$title`
+----
+## **`r rmarkdown::metadata$subtitle`**
+### `r rmarkdown::metadata$author`
+### `r rmarkdown::metadata$date`
+
+---
+class: inverse, middle
+name: data-science-case
+
+# .warmyellow[발표 개요]
+
+----
+
+.pull-left[
+
+.burlywood[연구문제]
+
+**.tomato[I. 대면소통 및 미디어이용이 정신건강에 미치는 차별적 영향: 고립감과 소속연결감의 매개효과]**
+
+1. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
+
+2. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?
+
+3. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕감 및 안녕감 사이의 매개관계를 조절하는가?  
+
+
+]
+
+.pull-right[   
+.left[
+
+**.CornflowerBlue[순 서]** 
+
+1. [개념 & 가설]
+  1. [미디어이용과 대면소통: 증강 vs. 전치](#concepts1)  
+  2. [사회관계: 고립감과 소속연결감](#method1)  
+  3. [정신건강: 안녕감과 불안녕감](#hypo1)   
+
+2. [방 법](#method1)  
+
+3. [결 과](#results1)  
+
+4. [논 의](#discussion1)  
+
+]
+] <!--end of right-column-->
+
+
+<!--------------------------  슬라이드 본문 시작 ------------------------------------->
+
+
+
+
+```{r message=TRUE, warning=TRUE, include=FALSE}
+if(!require(remote)) install.packages("remote")
+if(!require(gtExtras)) remotes::install_github("jthomasmock/gtExtras")
+if(!require(processR)) remotes::install_github("cardiomoon/processR")
+
+c("summarytools", "psych", "lm.beta", "lavaan", "mediation", "processR",
+  "writexl", "readxl", "gt", "kableExtra", "gtExtras",  
+  "janitor", "here", "corrr", "Hmisc", "correlation",
+  "see", "ggraph", 
+  "tidyverse", "tidytext", "lubridate") -> pkg_v
+pkg_v %in% installed.packages()[,"Package"] -> pkg_installed
+( pkg_v[!pkg_installed] -> pkg_new )
+
+if(length(pkg_new)) install.packages(pkg_new)
+
+lapply(pkg_v, require, ch = T)
+
+readRDS("data/v5889.rds") -> v5889_df; v5889_df -> df
+df %>% group_by(성) %>% summarise(N = n(), P = N/nrow(df)*100) -> sex_df
+df %>% group_by(학력) %>% summarise(N = n(), P = N/nrow(df)*100) -> edu_df
+
+df %>% summarise(M = mean(나이), SD = sd(나이)) -> age_df
+df %>% summarise(M = mean(소득), SD = sd(소득)) -> income_df
+
+
+options(digits = 1)
+```
+
+
+
+---
+name: results2e
+# 결과: 대면소통 매개 요약 
+
+.left-column6[
+대면소통은 우울불안에 대해 고립감과 소속연결이 모두 매개. 반면, 삶만족에 대해서는 소속연결감만 매개하고, 고립감은 매개하지 않는다. 
+]
+
+.right-column4[
+```{r}
+v5889_df  -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")
+W <- "성+나이+소득+학력"
+
+op <- par(no.readonly = TRUE)
+par(mfrow = c(2,2))
+out_l <- list()
+for (i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "+", W)
+    Y_fmla <- paste0(Y[[j]], "~", X, "+", M[[i]], "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      boot = T,
+      sims = 100
+    )
+    plot(med_out, main = paste(X, "-", M[[i]], "-", Y[[j]], sep = " "))
+    out_l[[i]] <- summary(med_out)
+  }
+}
+par(op)
+```
+]  
+
+.footnote[
+
+]
+
+
+
+---
+name: results3a1
+# 결과: 가설3a1: 불안녕감: 관계이용 조절매개
+
+
+.left-column8[
 
 ```{r}
-x <- 1:10
-x
+v5889_df  -> df
+df %>% 
+  mutate(관계이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
+I <- "관계이용상하"
+
+op <- par(no.readonly = TRUE)
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M,"+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(관계이용상하  = 3),
+      covariates.2 = list(관계이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Low"))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Mid"))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= High"))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+par(op)
+
 ```
 
-# Render the document
+]
 
-If you use the option `self_contained: false` (see line \#22 of this `Rmd` file), don't click on the `Knit` button in RStudio. Use instead the **xaringan** [@R-xaringan] RStudio add-in _Infinite Moon Reader_.
 
-# References {-}
 
-```{r, include=FALSE}
-knitr::write_bib(c(.packages(), 'pagedown', 'xaringan'), 'index.bib')
+.right-column2[
+
+단순 매개모형
+
+```{r}
+v5889_df -> df
+
+par(mfrow = c(2,1))
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_고립", "관계_소속연결")
+Y <- c("우울불안", "삶만족")[1]
+W <- "성+나이+소득+학력"
+
+out_l <- list()
+for (i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "+", W)
+    Y_fmla <- paste0(Y[[j]], "~", X, "+", M[[i]], "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      boot = T,
+      sims = 100
+    )
+    plot(med_out, main = paste(X, "-", M[[i]], "-", Y[[j]], sep = " "))
+    out_l[[i]] <- summary(med_out)
+  }
+}
+
 ```
+
+
+]
+
