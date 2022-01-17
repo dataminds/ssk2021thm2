@@ -24,6 +24,7 @@ editor_options:
   chunk_output_type: console
 ---
 
+
 ```{r setup, include = FALSE}
 library(tidyverse)
 
@@ -46,12 +47,6 @@ knitr::opts_chunk$set(echo = FALSE, message=FALSE, warning=FALSE,
 # scale_colour_continuous <- partial(scale_colour_nhs, discrete = FALSE)
 # scale_colour_discrete <- partial(scale_colour_nhs, discrete = TRUE)
 ```
-
-
-```{r share-again, echo=FALSE}
-xaringanExtra::use_share_again()
-```
-
 
 
 class: title-slide, left, bottom
@@ -441,7 +436,7 @@ name: method1
 # 참가자
 
 
-- 설문전문업체에 등록된 패널에 설문참가 안내 이메일을 보내 자료를 수집했다. 업체의 설문풀에 등록된 사람 중 8,196명이 설문안내 이메일을 통해 접속했다. 이중 5,967명이 응답을 완료했다. 불성실 응답자를 제외한 5889명(남성 = `r sex_df$N[1]`; 나이 *M* = `r age_df$M`, *SD* = `r age_df$SD`)을 최종 분석 대상에 포함했다.
+- 설문전문업체에 등록된 패널을 성, 세대, 지역을 층화변수로 할당표집했다. 총 47,589명에게 설문참가 안내 이메일을 보냈다. 8,196명이 설문안내 이메일을 통해 접속했다. 이중 5,967명이 응답을 완료했다. 불성실 응답자를 제외한 5889명(남성 = `r sex_df$N[1]`; 나이 *M* = `r age_df$M`, *SD* = `r age_df$SD`)을 최종 분석 대상에 포함했다.
 
 - 응답자의 교육수준은 `r edu_df$N[11]+edu_df$N[12]`명(`r edu_df$P[11]+edu_df$P[12]`%)이 석사 또는 박사학위 취득, `r edu_df$N[8]+edu_df$N[9]+edu_df$N[10]`명(`r edu_df$P[8]+edu_df$P[9]+edu_df$P[10]`%)이 대학 재학/중퇴/졸업, `r edu_df$N[5]+edu_df$N[6]+edu_df$N[7]`명(`r edu_df$P[5]+edu_df$P[6]+edu_df$P[7]`%)이 전문대학 재학/중퇴/졸업, `r edu_df$N[4]`명(`r edu_df$P[4]`%)이 고등학교 졸업, `r edu_df$N[1]+edu_df$N[2]+edu_df$N[3]`명(`r edu_df$P[1]+edu_df$P[2]+edu_df$P[3]`%)이 무학/초등학교졸업/중학교졸업이다. 
 
@@ -1061,6 +1056,7 @@ name: results2b
 .right-column8[
 
 ```{r}
+v5889_df -> df
 X <- c("대면빈도", "관계이용", "정보이용", "오락이용")
 M <- c("관계_고립", "관계_소속연결")
 Y <- c("우울불안", "삶만족")[2]
@@ -1737,6 +1733,125 @@ for(i in seq_along(M)) {
 ]
 
 
+---
+name: post1a
+# 사후분석1: 정보/오락이용-안념감 매개변수 탐색
+
+정보이용과 오락이용의 증가가 안녕감 증가에 유의하게 기여하지만, 소속연결감의 매개효과는 부분적. 다른 매개변수 존재 여부를 판단하기 위해서 안녕감에 대해 모든 연구변수를 독립변수로 투입하고 회귀분석한 결과, 대면소통과 관계이용의 유의성은 남아 있고, 정보이용과 오락이용의 유의성만 사라졌다. 
+
+```{r}
+options(digits = 3)
+#names(v5889_df)
+X <- c("관계이용", "정보이용", "오락이용")
+I <- c("대면빈도")
+Y <- c("우울불안", "삶만족")[2]
+W <- c("성+나이+소득+학력")
+v5889_df -> df
+
+#readRDS("data/v5889.rds") -> df
+
+paste0(
+  Y, "~", W, "+", I,"+", X[1], "+" ,X[2], "+" ,X[3]
+  ) %>% lm(formula = ., data = df) -> fit
+
+#fit %>% car::vif()
+
+fit %>% lm.beta() %>% summary() %>% .$r.squared -> rsq_v 
+fit %>% lm.beta() %>% summary() %>% .$adj.r.squared -> adjrsq_v
+fit %>% lm.beta() %>% summary() %>% .$fstatistic -> fstat_v
+#fit %>% lmp_f() -> lmp_v
+
+fit %>% lm.beta() %>% summary() %>% .$coef %>% as.data.frame() -> reg_df
+fit %>% confint() %>% as.data.frame() -> ci_df
+tibble(Predictor = c(
+  "Constant",
+  "Sex(0 = Male)",
+  "Age",
+  "Income",
+  "Education",
+  "F2F Frequency",
+  "Media Use: Relation",
+  "Media Use: Information",
+  "Media Use: Entertainment"
+  )) -> row_df
+
+bind_cols(row_df, reg_df, ci_df) %>% 
+  
+  gt() %>% gt_theme_guardian() %>% 
+  tab_header(md("**Table 4.** Multiple Regression Analysis on Well-being with Media Uses (*N* = 5889)")
+  ) %>% cols_label(
+    Estimate = md("*B*"), 
+    Standardized = md("_&beta;_"),
+    `Std. Error` = md("*SE*"),
+    `t value` = md("*t*"),
+    `Pr(>|t|)` = md("*p*"),
+    `2.5 %` = md("*LL*"),
+    `97.5 %` = md("*UL*")
+  ) %>% tab_spanner(
+    label = "95% CI", columns = c("2.5 %", "97.5 %")
+  ) %>% fmt_number(
+    columns = c(Estimate, Standardized, `Std. Error`, `t value`, `2.5 %`, `97.5 %`), decimals = 2
+  ) %>% fmt_number(
+    columns = `Pr(>|t|)`, decimals = 3
+  ) %>% tab_source_note(md(
+  "_F_(8, 5880) = 89.42, p < .001, R<sup>2</sup> = 0.11, _&Delta;R<sup>2</sup>_ = 0.11
+  <br> _Note._  _SE_ = Standard Error; _CI_ = Confidence Interval; _LL_ = Lower Limit; _UL_ = Upper Limit.  " 
+  ))
+
+```
+
+
+                         
+```{r eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+# 통계치 템플릿. 여기서 나온 결과를 복사해서 md()안에 붙여넣기
+glue::glue(
+  "_F_({fstat_v[2]}, {fstat_v[3]}) = {round(fstat_v[1], 2)}, p < .001, R<sup>2</sup> = {round(rsq_v, 2)}, _&Delta;R<sup>2</sup>_ = {round(adjrsq_v, 2)}"
+)
+```
+
+
+---
+name: post2a
+# 사후분석2: 관계이용의 정보/오락이용-안념감 매개
+
+.left-column3[
+
+정보이용과 오락이용의 안녕감의 관계에 대해 대변소통과 관계이용을 번갈아가며 매개변수로 투입해 총 4회의 매개분석을 한 결과, 대면빈도는 매개하지 않았고, 관계이용이 매개. 
+]
+
+.right-column7[
+
+```{r}
+X <- c("정보이용", "오락이용")
+M <- c("대면빈도", "관계이용")
+Y <- "삶만족"
+W <- "성+나이+소득+학력"
+
+par(mfrow = c(2,2))
+out_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(X)) {
+    M_fmla <- paste0(M[[i]], "~", X[[j]], "+", W)
+    Y_fmla <- paste0(Y, "~", X[[j]], "+", M[[i]], "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X[[j]],
+      mediator = M[[i]],
+      boot = T,
+      sims = 100
+    )
+    plot(med_out, main = paste(X[[j]], "-", M[[i]], "-", Y, sep = " "))
+    out_l[[i]] <- summary(med_out)
+  }
+}
+
+```
+
+]
 
 ---
 name: synthesis1
@@ -1744,7 +1859,7 @@ name: synthesis1
 
 I. 미디어이용은 사회관계의 대체재로서 대면소통을 증강하는가 전치하는가? 
 
-모든 유형의 미디어이용과 대면소통 시간 사이에 정의 상관성(스마트기기만 제외)
+모든 유형의 미디어이용과 대면소통 시간 사이에 정의 상관성(스마트기기는 상관이 유의하지 않다): 전치가설 배제 가능
 
 II. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안녕감 및 안녕감 사이의 관계를 차별적으로 매개하는가?
 
@@ -1756,10 +1871,10 @@ II. 고립감 및 소속연결감이 대면소통 및 미디어이용과 불안�
 
 - 관계/정보/오락 이용: 
 
-  - 불안녕감: 고립감과 소속연결감 불안녕감 감소를 매개하지 않았다 (이용시간 증가가 불안녕감 유의하게 증가.)  
-    - 대면시간과 함께 투입할 경우, 관계이용은 불안녕감과 관련이 없지만, 정보이용과 오락이용은 불안녕감 증대. 
-    
-  - 안녕감: 고립감은 안녕감을 매개하지 않았고, 소속연결감이 안녕감을 부분적으로 매개.  
+  - 불안녕감: 고립감과 소속연결감 불안녕감 감소를 매개하지 않았다.
+  - 관계이용은 불안녕감과 관련이 없지만, 정보이용과 오락이용은 불안녕감 증대.   - 매개변수: 고립감은 안녕감을 매개하지 않았고, 소속연결감이 안녕감을 부분적으로 매개.  
+  
+- 정보이용과 오락이용은 불안녕감과 안녕감을 모두 증대하는 효과.
 
 
 ---
@@ -1775,6 +1890,7 @@ III. 미디어이용은 대면소통, 고립감 및 소속연결감, 불안녕�
 
 </p>
 
+- 관계이용, 정보이용, 오락이용 모두 대면소통의 불안녕감과 안녕감의 관계를 부정적으로 조절. 즉, 관계이용, 정보이용, 오락이용 시간이 많은 집단에서 대면소통의 안녕감과 불안녕감에 대한 긍정효과 소멸
 
 ---
 name: discussion1
@@ -1782,12 +1898,13 @@ name: discussion1
 
 - 미디어이용은 대면소통시간을 전치하지 않는다. 
 
-- 미디어이용은 불안녕감 증가와 관련. 
+- 정보이용과 오락이용은 불안녕감 증가에 기여. 
 
   - 대면소통을 전치하기 때문은 아니다. 
-  - 미디어이용 자체의 불안녕감 증가 요인 가능 (보상민감성, 충동성 강화 등).
+  - 정보이용과 오락이용 자체의 불안녕감 증가 요인 가능 (보상민감성, 충동성 강화 등).
+  - 관계이용은 불안녕감 증가에 기여하지 않는다. 
 
-- 미디어이용은 안녕감 증가와 관련.
+- 세 유형의 미디어이용 모두 안녕감 증가에 기여.
 
   - 대면소통을 증강하기 때문은 아니다. 
   - 미디어이용 자체의 기능. 
@@ -1800,13 +1917,15 @@ name: discussion1
   - 미디어이용이 대면소통의 긍정효과를 상쇄하는 작용.
   - 미디어이용 고유의 긍정 및 부정 작용 존재 가능성
 
+
   
 ---
 name: discussion2
 # 논의2
 
 - 이론적 기여
-  
+
+  - 전치가설과 증강가설 모두 배제 가능.    
   - 행동의 이중체계 확인(고립/소속연결, 불안녕감/안녕감)  
   - 기능과 신호 구분(관계성과 우울불안/삶만족)  
   
@@ -1814,9 +1933,10 @@ name: discussion2
 
   - 미디어이용의 부정적 측면과 긍정적 측면 모두 존재  
 
-- 한계
+- 한계 및 과제
 
-  - 횡단연구. 종단자료 수집중
+  - 횡단연구. 종단자료 수집중  
+  - 관계이용의 안녕감 증대에 대한 매개변수 탐색 
 
   
 ---
