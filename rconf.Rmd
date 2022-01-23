@@ -85,7 +85,7 @@ name: data-science-case
 
 **.CornflowerBlue[순 서]** 
 
-1. [논 리]
+1. 논 리
   1. [대면소통과 미디어](#media1)  
   2. [행동의 이중체계](#2theory1a)  
   3. [기능과 신호](#3theory1a)   
@@ -1341,8 +1341,8 @@ name: results3b1
 v5889_df  -> df
 df %>% 
   mutate(정보이용상하 = case_when(
-    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
-    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    정보이용 <= quantile(df$정보이용, probs = .3) ~ 3,
+    정보이용 >= quantile(df$정보이용, probs = .7) ~ 7, 
     TRUE ~ 5)) -> df
 
 X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
@@ -1412,9 +1412,9 @@ for(i in seq_along(M)) {
 
 ```
 
-- 대면소통 - 고립감 - 불안녕감: 정보이용(상)에서 매개관계 소멸, (하)는 강화 
+- 대면소통 - 고립감 - 불안녕감: 매개관계 유지
  
-- 대면소통 - 소속연결 - 불안녕감: 정보이용(상)(중)(하)에서 매개관계 소멸
+- 대면소통 - 소속연결 - 불안녕감: 정보이용(상)에서 매개관계 소멸
 
 
 ]
@@ -1443,8 +1443,8 @@ name: results3b2
 v5889_df  -> df
 df %>% 
   mutate(정보이용상하 = case_when(
-    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
-    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    정보이용 <= quantile(df$정보이용, probs = .3) ~ 3,
+    정보이용 >= quantile(df$정보이용, probs = .7) ~ 7, 
     TRUE ~ 5)) -> df
 
 X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
@@ -1516,7 +1516,7 @@ for(i in seq_along(M)) {
 
 - 대면소통 - 고립감 - 안녕감: 단순매개관계 부재 
  
-- 대면소통 - 소속연결 - 안녕감: 정보이용(상)에서 매개효과 소멸   
+- 대면소통 - 소속연결 - 안녕감: 부분매개 유지
 
 ]
 
@@ -1548,8 +1548,8 @@ name: results3c1
 v5889_df  -> df
 df %>% 
   mutate(오락이용상하 = case_when(
-    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
-    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    오락이용 <= quantile(df$오락이용, probs = .3) ~ 3,
+    오락이용 >= quantile(df$오락이용, probs = .7) ~ 7, 
     TRUE ~ 5)) -> df
 
 X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
@@ -1650,8 +1650,8 @@ name: results3c2
 v5889_df  -> df
 df %>% 
   mutate(오락이용상하 = case_when(
-    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
-    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    오락이용 <= quantile(df$오락이용, probs = .3) ~ 3,
+    오락이용 >= quantile(df$오락이용, probs = .7) ~ 7, 
     TRUE ~ 5)) -> df
 
 X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[1]
@@ -1816,7 +1816,7 @@ name: post2a
 
 .left-column3[
 
-정보이용과 오락이용의 안녕감의 관계에 대해 대변소통과 관계이용을 번갈아가며 매개변수로 투입해 총 4회의 매개분석을 한 결과, 대면빈도는 매개하지 않았고, 관계이용이 매개. 
+정보이용과 오락이용의 안녕감의 관계에 대해 대면소통과 관계이용을 번갈아가며 매개변수로 투입해 총 4회의 매개분석을 한 결과, 대면빈도는 매개하지 않았고, 관계이용이 매개. 
 ]
 
 .right-column7[
@@ -1852,6 +1852,502 @@ for(i in seq_along(M)) {
 ```
 
 ]
+
+
+
+---
+name: post3a
+# 사후분석3: 관계이용-안념감 소속연결감 매개에 정보/오락이용 통제
+
+.left-column3[
+
+정보/오락이용을 통제하고 관계이용의 안녕감 관계에 대해 소속연결감을 매개변수로 투입. 차이 없음.
+]
+
+.right-column7[
+
+```{r}
+X <- c("관계이용", "정보이용", "오락이용")[1]
+M <- c("관계_소속연결")
+Y <- "삶만족"
+W <- "성+나이+소득+학력+정보이용+오락이용"
+
+par(mfrow = c(1,1))
+out_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(X)) {
+    M_fmla <- paste0(M[[i]], "~", X[[j]], "+", W)
+    Y_fmla <- paste0(Y, "~", X[[j]], "+", M[[i]], "+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X[[j]],
+      mediator = M[[i]],
+      boot = T,
+      sims = 100
+    )
+    plot(med_out, main = paste(X[[j]], "-", M[[i]], "-", Y, sep = " "))
+    out_l[[i]] <- summary(med_out)
+  }
+}
+
+```
+
+]
+
+---
+name: cluster1
+# 군집분석1: 관계-정보이용 군집해 관계이용-안념감 소속연결감 매개
+
+.left-column3[
+
+HL: 관계이용H 정보이용L  
+LL: 관계이용L 정보이용L  
+HH: 관계이용H 정보이용H  
+MM: 관계이용M 정보이용M  
+
+```{r}
+set.seed(1)
+n = 4
+# 군집
+v5889_df %>%
+  dplyr::select(관계이용, 정보이용) -> df;df %>% 
+  kmeans(centers = n) -> kclust
+# 군집한 집단 시각화
+kclust %>% tidy() %>% 
+  pivot_longer(c(관계이용,  정보이용), 
+                 names_to = "이용", values_to = "이용값")  %>% 
+  ggplot(aes(x = cluster, y =  이용값, fill =  이용)) +
+  geom_bar(position = "dodge", stat = "identity")
+
+```
+
+
+HL군집은 소속연결이 관계이용-삶만족 완전매개
+LL군집은 소속연결이 관계이용-삶만족 부분매개
+HH군집은 소속연결이 관계이용-삶만족 부분매개
+MM군집은 매개 없음. total effect 소멸. 직접효과는 삶만족 악화.
+
+]
+
+.right-column7[
+
+```{r}
+# 군집데이터프레임 + 원데이터셋
+inner_join(v5889_df, augment(kclust, df)) %>% 
+  rename(군집 = .cluster) %>% 
+  mutate(군집 = recode(
+    군집, `1` = "HL", `2` = "LL",  `3` = "HH", `4` = "MM")) -> c_df
+
+op <- par(no.readonly = TRUE)
+par(mfrow = c(2,2))
+
+for(k in c("HL", "LL", "HH", "MM")) {
+c_df %>% filter(군집 == k) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[c(2)]
+M <- c("관계_고립", "관계_소속연결")[2]
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+
+out_l <- list()
+for(j in seq_along(M)) {
+  for(i in seq_along(X)) {
+  M_fmla <- paste0(M[[j]], "~", X[[i]], "+", W)
+  Y_fmla <- paste0(Y, "~", X[[i]], "+", M[[j]], "+", W)
+  
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X[[i]], mediator = M[[j]], boot = T, sims = 100)
+  plot(med_out, 
+       main = paste(X[[i]], "-", M[[j]], "-", Y, sep = " "),
+       sub = paste("군집", k))
+  out_l[[i]] <- summary(med_out)
+  }
+}
+
+}
+par(op)
+
+```
+
+]
+
+
+---
+name: cluster2
+# 군집분석2: 관계-오락이용 군집해 관계이용-안념감 소속연결감 매개
+
+.left-column3[
+
+HL: 관계이용H 오락이용L  
+LL: 관계이용L 오락이용L  
+HH: 관계이용H 오락이용H  
+MM: 관계이용M 오락이용M  
+
+```{r}
+set.seed(1)
+n = 4
+# 군집
+v5889_df %>%
+  dplyr::select(관계이용, 오락이용) -> df;df %>% 
+  kmeans(centers = n) -> kclust
+# 군집한 집단 시각화
+kclust %>% tidy() %>% 
+  pivot_longer(c(관계이용,  오락이용), 
+                 names_to = "이용", values_to = "이용값")  %>% 
+  ggplot(aes(x = cluster, y =  이용값, fill =  이용)) +
+  geom_bar(position = "dodge", stat = "identity")
+
+# 군집데이터프레임 + 원데이터셋
+inner_join(v5889_df, augment(kclust, df)) %>% 
+  rename(군집 = .cluster) %>% 
+  mutate(군집 = recode(
+    군집, `1` = "LL", `2` = "MM",  `3` = "HL", `4` = "HH")) -> c_df
+
+```
+
+
+HL군집은 소속연결이 관계이용-삶만족 완전매개
+LL군집은 소속연결이 관계이용-삶만족 부분매개
+HH군집은 소속연결이 관계이용-삶만족 완전매개
+MM군집은 매개 없음. total effect = ADE.
+
+]
+
+.right-column7[
+
+```{r}
+op <- par(no.readonly = TRUE)
+par(mfrow = c(2,2))
+
+for(k in c("HL", "LL", "HH", "MM")) {
+c_df %>% filter(군집 == k) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[c(2)]
+M <- c("관계_고립", "관계_소속연결")[2]
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+
+out_l <- list()
+for(j in seq_along(M)) {
+  for(i in seq_along(X)) {
+  M_fmla <- paste0(M[[j]], "~", X[[i]], "+", W)
+  Y_fmla <- paste0(Y, "~", X[[i]], "+", M[[j]], "+", W)
+  
+  med_fit <- lm(M_fmla, data = df)
+  out_fit <- lm(Y_fmla, data = df)
+  med_out <- mediation::mediate(
+    med_fit, out_fit, treat = X[[i]], mediator = M[[j]], boot = T, sims = 100)
+  plot(med_out, 
+       main = paste(X[[i]], "-", M[[j]], "-", Y, sep = " "),
+       sub = paste("군집", k))
+  out_l[[i]] <- summary(med_out)
+  }
+}
+
+}
+par(op)
+
+```
+
+]
+
+
+
+---
+name: rel1
+# 관계이용 3분: 관계이용 상중하별 매개
+
+.left-column2[
+
+
+]
+
+
+.right-column8[
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(관계이용상하 = case_when(
+    관계이용 <= quantile(df$관계이용, probs = .3) ~ 3,
+    관계이용 >= quantile(df$관계이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[2]
+M <- c("관계_고립", "관계_소속연결")[2]
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "관계이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M,"+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(관계이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(관계이용상하  = 3),
+      covariates.2 = list(관계이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Low"))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Mid"))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= High"))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+관계이용 하 집단은 부분매개. 상 집단은 완전매개
+
+]
+
+.footnote[
+
+]
+
+
+
+---
+name: rel2
+# 정보이용 3분: 정보이용 상중하별 매개
+
+.left-column2[
+
+
+]
+
+
+.right-column8[
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(정보이용상하 = case_when(
+    정보이용 <= quantile(df$정보이용, probs = .3) ~ 3,
+    정보이용 >= quantile(df$정보이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[3]
+M <- c("관계_고립", "관계_소속연결")[2]
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "정보이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M,"+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(정보이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(정보이용상하  = 3),
+      covariates.2 = list(정보이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Low"))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Mid"))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= High"))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+정보이용 상중하 집단 모두 부분매개
+
+]
+
+.footnote[
+
+]
+
+
+---
+name: rel3
+# 정보이용 3분: 정보이용 상중하별 매개
+
+.left-column2[
+
+
+]
+
+
+.right-column8[
+
+```{r}
+v5889_df  -> df
+df %>% 
+  mutate(오락이용상하 = case_when(
+    오락이용 <= quantile(df$오락이용, probs = .3) ~ 3,
+    오락이용 >= quantile(df$오락이용, probs = .7) ~ 7, 
+    TRUE ~ 5)) -> df
+
+X <- c("대면빈도", "관계이용", "정보이용", "오락이용")[4]
+M <- c("관계_고립", "관계_소속연결")[2]
+Y <- c("우울불안", "삶만족")[2]
+W <- "성+나이+소득+학력"
+I <- "오락이용상하"
+
+par(mfrow = c(2,3))
+out2_l <- list()
+out6_l <- list()
+test_l <- list()
+for(i in seq_along(M)) {
+  for (j in seq_along(Y)) {
+    M_fmla <- paste0(M[[i]], "~", X, "*", I, "+", W)
+    Y_fmla <-
+      paste0(Y[[j]], "~", M[[i]], "+", X, "*", I, "+", M,"+", W)
+    
+    med_fit <- lm(M_fmla, data = df)
+    out_fit <- lm(Y_fmla, data = df)
+    med2_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 3),
+      sims = 100
+    )
+    med4_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 5),
+      sims = 100
+    )
+    med6_out <- mediation::mediate(
+      med_fit,
+      out_fit,
+      treat = X,
+      mediator = M[[i]],
+      covariates = list(오락이용상하  = 7),
+      sims = 100
+    )
+    med_init <-
+      mediation::mediate(
+        med_fit,
+        out_fit,
+        treat = X,
+        mediator = M[[i]],
+        sims = 100
+      )
+    test_l[[i]] <- test.modmed(
+      med_init,
+      covariates.1 = list(오락이용상하  = 3),
+      covariates.2 = list(오락이용상하  = 7)
+    )
+    plot(med2_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Low"))
+    
+    plot(med4_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= Mid"))
+    
+    plot(med6_out, main = paste(X, "-", M[[i]], "-", Y[[j]]), sub = paste(I, "= High"))
+    out2_l[[i]] <- summary(med2_out)
+    out6_l[[i]] <- summary(med6_out)
+  }
+}
+
+```
+
+오락이용 하 집단 부분매개. 중상집단은 매개 소멸
+
+]
+
+.footnote[
+
+]
+
+
 
 ---
 name: synthesis1
